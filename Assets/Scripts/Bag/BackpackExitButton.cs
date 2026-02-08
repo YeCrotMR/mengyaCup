@@ -1,20 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 /// <summary>
-/// 背包界面右上角退出按钮。
-/// - 预制体模式：作为面板在 UI 场景内时，勾选 closeAsPanel 会关闭背包面板返回主页面。
-/// - 场景模式：未勾选时加载 targetSceneName 场景。
+/// 背包退出按钮：点击后禁用指定物体（通常是背包 UI 根节点）
 /// </summary>
 [RequireComponent(typeof(Button))]
 public class BackpackExitButton : MonoBehaviour
 {
-    [Tooltip("勾选：作为面板使用时关闭背包并返回主页面；不勾选：加载目标场景（用于独立背包场景）")]
-    public bool closeAsPanel = true;
-
-    [Tooltip("未使用 closeAsPanel 时加载的场景名称")]
-    public string targetSceneName = "UI";
+    [Header("要禁用的物体")]
+    [Tooltip("点击按钮后将被 SetActive(false) 的物体")]
+    public GameObject targetToDisable;
 
     private void Awake()
     {
@@ -23,18 +18,20 @@ public class BackpackExitButton : MonoBehaviour
 
     private void OnExitClick()
     {
-        if (closeAsPanel && BackpackUI.Instance != null)
-            BackpackUI.Instance.CloseBackpack();
-        else
-            ExitToScene();
+        DisableTarget();
     }
 
-    /// <summary>加载目标场景</summary>
-    public void ExitToScene()
+    /// <summary>
+    /// 禁用目标物体（可供外部调用）
+    /// </summary>
+    public void DisableTarget()
     {
-        if (FadeController.Instance != null)
-            FadeController.Instance.FadeAndLoadScene(targetSceneName);
-        else
-            SceneManager.LoadScene(targetSceneName);
+        if (targetToDisable == null)
+        {
+            Debug.LogWarning("[BackpackExitButton] 未设置 targetToDisable");
+            return;
+        }
+
+        targetToDisable.SetActive(false);
     }
 }

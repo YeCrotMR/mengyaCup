@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -52,23 +54,29 @@ public class DialogueSystem : MonoBehaviour
     }
 
     void Update()
-    {
-        if (UIManager.isUIMode) return;
-        if (!dialogueBox.activeSelf) return;
+{
+    if (UIManager.isUIMode) return;
+    if (!dialogueBox.activeSelf) return;
 
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+    // ⭐ 排除：对话框以外的 UI
+    if (IsPointerOverUIExceptDialogueBox())
+        return;
+
+    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+    {
+        if (isTyping)
         {
-            if (isTyping)
-            {
-                SkipTypingImmediate();
-            }
-            else if (canClickNext)
-            {
-                clickCount++;
-                ProceedToNextLine();
-            }
+            SkipTypingImmediate();
+        }
+        else if (canClickNext)
+        {
+            clickCount++;
+            ProceedToNextLine();
         }
     }
+}
+
+
 
     void SkipTypingImmediate()
     {
@@ -263,5 +271,46 @@ public class DialogueSystem : MonoBehaviour
             StartCoroutine(TypeLine(dialogueLines[currentLine]));
         else
             EndDialogue();
+    }
+
+    bool IsPointerOverUIExceptDialogueBox()
+{
+    if (EventSystem.current == null)
+        return false;
+
+    PointerEventData eventData = new PointerEventData(EventSystem.current);
+    eventData.position = Input.mousePosition;
+
+    List<RaycastResult> results = new List<RaycastResult>();
+    EventSystem.current.RaycastAll(eventData, results);
+
+    foreach (RaycastResult result in results)
+    {
+        // 如果点到的是对话框或其子物体 → 放行
+        if (result.gameObject == dialogueBox ||
+            result.gameObject.transform.IsChildOf(dialogueBox.transform))
+        {
+            continue;
+        }
+
+        // 点到了其他 UI
+        return true;
+    }
+
+    return false;
+}
+
+
+    public bool IsChoiceChosen(DialogueLine[] lines, int lineIndex, int choiceIndex)
+    {
+        // 安全检查（数组下标是从0开始的）
+        if (lines == null) return false;
+        if (lineIndex < 0 || lineIndex >= lines.Length) return false;
+
+        var line = lines[lineIndex];
+        if (!line.hasChoices || line.choices == null) return false;
+        if (choiceIndex < 0 || choiceIndex >= line.choices.Length) return false;
+
+        return line.choices[choiceIndex].wasChosen;
     }
 }

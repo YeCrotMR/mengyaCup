@@ -29,10 +29,6 @@ public class BackpackUI : MonoBehaviour
     public Text detailDescription;
     public Image detailImage;
 
-    [Header("与 UIManager 集成")]
-    public UIManager uiManager;
-    public bool useUIManagerStack = true;
-
     private InfoCategory currentTab = InfoCategory.Character;
     private List<GameObject> slotInstances = new List<GameObject>();
 
@@ -56,23 +52,12 @@ public class BackpackUI : MonoBehaviour
             detailPanel.SetActive(false);
     }
 
-    private void Start()
-    {
-        if (uiManager == null)
-            uiManager = FindObjectOfType<UIManager>();
-    }
-
     /// <summary>打开背包（可从背包按钮或出示证物时调用）</summary>
     public void OpenBackpack()
     {
         if (backpackPanel == null) return;
 
         backpackPanel.SetActive(true);
-        if (useUIManagerStack && uiManager != null)
-            uiManager.PushUI(backpackPanel);
-        else
-            backpackPanel.SetActive(true);
-
         RefreshDisplay();
     }
 
@@ -81,10 +66,7 @@ public class BackpackUI : MonoBehaviour
     {
         if (backpackPanel == null) return;
 
-        if (useUIManagerStack && uiManager != null)
-            uiManager.PopUI();
-        else
-            backpackPanel.SetActive(false);
+        backpackPanel.SetActive(false);
 
         if (detailPanel != null)
             detailPanel.SetActive(false);
@@ -101,10 +83,6 @@ public class BackpackUI : MonoBehaviour
     {
         UpdateTabLockHints();
         RefreshItemList();
-        if (detailPanel != null && detailPanel.activeSelf)
-        {
-            // 保持当前选中项的详情显示可根据需要再刷新
-        }
     }
 
     private void UpdateTabLockHints()
@@ -126,15 +104,19 @@ public class BackpackUI : MonoBehaviour
     private void SetTabInteractable(Button btn, InfoCategory cat)
     {
         if (btn == null) return;
-        btn.interactable = BackpackManager.Instance != null && BackpackManager.Instance.IsCategoryUnlocked(cat);
+        btn.interactable = BackpackManager.Instance != null &&
+                          BackpackManager.Instance.IsCategoryUnlocked(cat);
     }
 
     private void SwitchTab(InfoCategory category)
     {
-        if (BackpackManager.Instance != null && !BackpackManager.Instance.IsCategoryUnlocked(category))
+        if (BackpackManager.Instance != null &&
+            !BackpackManager.Instance.IsCategoryUnlocked(category))
             return;
+
         currentTab = category;
         RefreshItemList();
+
         if (detailPanel != null)
             detailPanel.SetActive(false);
     }
@@ -162,14 +144,17 @@ public class BackpackUI : MonoBehaviour
             GameObject slot = Instantiate(itemSlotPrefab, itemListContent);
             slotInstances.Add(slot);
 
-            // 物品槽：图片 + 名称
+            // 名称
             Text slotText = slot.GetComponentInChildren<Text>();
             if (slotText != null)
                 slotText.text = item.title;
 
+            // 图标
             Image slotImage = null;
             var iconTrans = slot.transform.Find("Icon");
-            if (iconTrans != null) slotImage = iconTrans.GetComponent<Image>();
+            if (iconTrans != null)
+                slotImage = iconTrans.GetComponent<Image>();
+
             if (slotImage != null)
             {
                 if (item.image != null)
@@ -184,6 +169,7 @@ public class BackpackUI : MonoBehaviour
                 }
             }
 
+            // 点击显示详情
             Button slotBtn = slot.GetComponent<Button>();
             if (slotBtn != null)
             {
@@ -198,6 +184,7 @@ public class BackpackUI : MonoBehaviour
         if (detailPanel != null) detailPanel.SetActive(true);
         if (detailTitle != null) detailTitle.text = item.title;
         if (detailDescription != null) detailDescription.text = item.description;
+
         if (detailImage != null)
         {
             detailImage.gameObject.SetActive(item.image != null);
