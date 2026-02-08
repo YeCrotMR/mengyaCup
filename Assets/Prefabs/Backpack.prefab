@@ -732,7 +732,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3150543314269508431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1b3410dedf2f0479d927301bf7f260, type: 3}
+  m_Script: {fileID: 11500000, guid: 447862067627dce4cb6ef0f228a909fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backpackPanel: {fileID: 3150543314269508431}
@@ -742,9 +742,9 @@ MonoBehaviour:
   tabCharacterLockHint: {fileID: 0}
   tabSuspicionLockHint: {fileID: 0}
   tabConclusionLockHint: {fileID: 0}
-  itemListContent: {fileID: 5047044755198545753}
+  itemListContent: {fileID: 5886868350967826524}
   itemSlotPrefab: {fileID: 5000001, guid: 862b65817535ca14095d799bb1652ebb, type: 3}
-  detailPanel: {fileID: 6763704285174397530}
+  detailPanel: {fileID: 0}
   detailTitle: {fileID: 5615913420722274861}
   detailDescription: {fileID: 77763644002483112}
   detailImage: {fileID: 1452323383331756816}
