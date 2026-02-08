@@ -175,6 +175,7 @@ public class BackpackUI : MonoBehaviour
                 if (item.image != null)
                 {
                     slotImage.sprite = item.image;
+                    slotImage.preserveAspect = true;
                     slotImage.gameObject.SetActive(true);
                 }
                 else
