@@ -264,4 +264,17 @@ public class DialogueSystem : MonoBehaviour
         else
             EndDialogue();
     }
+
+    public bool IsChoiceChosen(DialogueLine[] lines, int lineIndex, int choiceIndex)
+    {
+        // 安全检查（数组下标是从0开始的）
+        if (lines == null) return false;
+        if (lineIndex < 0 || lineIndex >= lines.Length) return false;
+
+        var line = lines[lineIndex];
+        if (!line.hasChoices || line.choices == null) return false;
+        if (choiceIndex < 0 || choiceIndex >= line.choices.Length) return false;
+
+        return line.choices[choiceIndex].wasChosen;
+    }
 }
