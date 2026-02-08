@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447862067627dce4cb6ef0f228a909fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backpackPanel: {fileID: 0}
+  backpackPanel: {fileID: 1765780477}
   tabCharacter: {fileID: 1991694196}
   tabSuspicion: {fileID: 1315421021}
   tabConclusion: {fileID: 1990562340}
