@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
     [Header("UI 引用")]
     public GameObject dialogueBox;
-    public Text dialogueText;
+    public TMP_Text speakerNameText;          // ⭐ 新增：说话者名字（单独的Text）
+    public TMP_Text dialogueText;
     public Image characterPortrait;
 
     [Header("对话内容")]
@@ -34,8 +35,15 @@ public class DialogueSystem : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        dialogueBox.SetActive(false);
-        choicePanel.SetActive(false);
+
+        if (dialogueBox != null) dialogueBox.SetActive(false);
+        if (choicePanel != null) choicePanel.SetActive(false);
+
+        if (speakerNameText != null)
+        {
+            speakerNameText.text = "";
+            speakerNameText.gameObject.SetActive(false);
+        }
     }
 
     public void SetDialogue(DialogueLine[] newLines)
@@ -45,7 +53,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Start()
     {
-        dialogueBox.SetActive(false);
+        if (dialogueBox != null) dialogueBox.SetActive(false);
 
         if (autoStart)
         {
@@ -54,29 +62,27 @@ public class DialogueSystem : MonoBehaviour
     }
 
     void Update()
-{
-    if (UIManager.isUIMode) return;
-    if (!dialogueBox.activeSelf) return;
-
-    // ⭐ 排除：对话框以外的 UI
-    if (IsPointerOverUIExceptDialogueBox())
-        return;
-
-    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
     {
-        if (isTyping)
+        if (UIManager.isUIMode) return;
+        if (dialogueBox == null || !dialogueBox.activeSelf) return;
+
+        // ⭐ 排除：对话框以外的 UI（点到按钮等不推进对话；点到对话框本体仍可推进）
+        if (IsPointerOverUIExceptDialogueBox())
+            return;
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            SkipTypingImmediate();
-        }
-        else if (canClickNext)
-        {
-            clickCount++;
-            ProceedToNextLine();
+            if (isTyping)
+            {
+                SkipTypingImmediate();
+            }
+            else if (canClickNext)
+            {
+                clickCount++;
+                ProceedToNextLine();
+            }
         }
     }
-}
-
-
 
     void SkipTypingImmediate()
     {
@@ -84,10 +90,19 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
 
         DialogueLine line = dialogueLines[currentLine];
+
+        // ⭐ 名字单独显示
+        UpdateSpeakerName(line);
+
+        // 内容直接显示完整文本
         dialogueText.text = line.text;
         SetIconPreserveHeight(characterPortrait, line.portrait);
 
-        DialogueLogManager.Instance?.AddEntry(line.text);
+        // Log（可保留“名字+内容”的格式）
+        string displayText = string.IsNullOrEmpty(line.speakerName)
+            ? line.text
+            : $"<b>[{line.speakerName}]</b>：{line.text}";
+        DialogueLogManager.Instance?.AddEntry(displayText);
 
         if (line.hasChoices && line.choices != null && line.choices.Length > 0)
         {
@@ -106,7 +121,8 @@ public class DialogueSystem : MonoBehaviour
         currentLine = 0;
         clickCount = 0;
         dialogueFinished = false;
-        dialogueBox.SetActive(true);
+
+        if (dialogueBox != null) dialogueBox.SetActive(true);
 
         if (dialogueLines != null && dialogueLines.Length > 0)
         {
@@ -126,6 +142,10 @@ public class DialogueSystem : MonoBehaviour
     {
         isTyping = true;
         canClickNext = false;
+
+        // ⭐ 名字单独显示
+        UpdateSpeakerName(line);
+
         dialogueText.text = "";
         SetIconPreserveHeight(characterPortrait, line.portrait);
 
@@ -137,10 +157,10 @@ public class DialogueSystem : MonoBehaviour
 
         isTyping = false;
 
+        // Log（可保留“名字+内容”的格式）
         string displayText = string.IsNullOrEmpty(line.speakerName)
             ? line.text
             : $"<b>[{line.speakerName}]</b>：{line.text}";
-
         DialogueLogManager.Instance?.AddEntry(displayText);
 
         if (line.hasChoices && line.choices != null && line.choices.Length > 0)
@@ -156,52 +176,60 @@ public class DialogueSystem : MonoBehaviour
     void EndDialogue()
     {
         isInDialogue = false;
-        dialogueBox.SetActive(false);
-        dialogueText.text = "";
-        characterPortrait.sprite = null;
-        dialogueFinished = true;
 
+        if (dialogueBox != null) dialogueBox.SetActive(false);
+        if (dialogueText != null) dialogueText.text = "";
+        if (characterPortrait != null) characterPortrait.sprite = null;
+
+        if (speakerNameText != null)
+        {
+            speakerNameText.text = "";
+            speakerNameText.gameObject.SetActive(false);
+        }
+
+        dialogueFinished = true;
     }
 
     void ShowChoices(DialogueChoice[] choices)
+{
+    canClickNext = false;
+    if (choicePanel != null) choicePanel.SetActive(true);
+
+    foreach (Transform child in choicePanel.transform)
+        Destroy(child.gameObject);
+
+    foreach (DialogueChoice choice in choices)
     {
-        canClickNext = false;
-        choicePanel.SetActive(true);
+        GameObject btnObj = Instantiate(choiceButtonPrefab, choicePanel.transform);
 
-        foreach (Transform child in choicePanel.transform)
-            Destroy(child.gameObject);
+        var image = btnObj.GetComponent<Image>();
+        var button = btnObj.GetComponent<Button>();
+        if (image != null) image.enabled = true;
+        if (button != null) button.enabled = true;
 
-        foreach (DialogueChoice choice in choices)
+        // ⭐ 使用 TextMeshProUGUI
+        TextMeshProUGUI btnText = btnObj.GetComponentInChildren<TextMeshProUGUI>();
+        if (btnText != null)
         {
-            GameObject btnObj = Instantiate(choiceButtonPrefab, choicePanel.transform);
-
-            var image = btnObj.GetComponent<Image>();
-            var button = btnObj.GetComponent<Button>();
-            if (image != null) image.enabled = true;
-            if (button != null) button.enabled = true;
-
-            Text btnText = btnObj.GetComponentInChildren<Text>();
-            if (btnText != null)
-            {
-                btnText.enabled = true;
-                btnText.text = choice.choiceText;
-
-                Shadow shadow = btnText.GetComponent<Shadow>();
-                if (shadow != null) shadow.enabled = true;
-            }
-
-            button.onClick.AddListener(() =>
-            {
-                choice.wasChosen = true;
-                choicePanel.SetActive(false);
-                SetDialogue(choice.nextDialogue);
-                StartDialogue();
-            });
+            btnText.enabled = true;
+            btnText.text = choice.choiceText;
         }
+
+        button.onClick.AddListener(() =>
+        {
+            choice.wasChosen = true;
+            choicePanel.SetActive(false);
+            SetDialogue(choice.nextDialogue);
+            StartDialogue();
+        });
     }
+}
+
 
     private void SetIconPreserveHeight(Image image, Sprite sprite)
     {
+        if (image == null) return;
+
         image.sprite = sprite;
         image.type = Image.Type.Simple;
         image.preserveAspect = true;
@@ -223,7 +251,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void SkipDialogue()
     {
-        if (!dialogueBox.activeSelf || dialogueLines == null || dialogueLines.Length == 0)
+        if (dialogueBox == null || !dialogueBox.activeSelf || dialogueLines == null || dialogueLines.Length == 0)
             return;
 
         StopAllCoroutines();
@@ -237,8 +265,12 @@ public class DialogueSystem : MonoBehaviour
             DialogueLogManager.Instance?.AddEntry(displayText);
         }
 
-        dialogueText.text = dialogueLines[dialogueLines.Length - 1].text;
-        SetIconPreserveHeight(characterPortrait, dialogueLines[dialogueLines.Length - 1].portrait);
+        // 最后一行直接显示（名字也更新）
+        DialogueLine last = dialogueLines[dialogueLines.Length - 1];
+        UpdateSpeakerName(last);
+
+        dialogueText.text = last.text;
+        SetIconPreserveHeight(characterPortrait, last.portrait);
 
         currentLine = dialogueLines.Length;
         EndDialogue();
@@ -252,11 +284,17 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
 
         DialogueLine line = dialogueLines[currentLine];
+
+        // ⭐ 名字单独显示
+        UpdateSpeakerName(line);
+
+        // 内容只显示正文
+        dialogueText.text = line.text;
+
+        // Log（可保留“名字+内容”的格式）
         string displayText = string.IsNullOrEmpty(line.speakerName)
             ? line.text
             : $"<b>[{line.speakerName}]</b>：{line.text}";
-
-        dialogueText.text = displayText;
         DialogueLogManager.Instance?.AddEntry(displayText);
 
         canClickNext = true;
@@ -273,33 +311,40 @@ public class DialogueSystem : MonoBehaviour
             EndDialogue();
     }
 
+    // ⭐ UI 点击过滤：鼠标在“对话框以外的UI”上时，阻止推进
     bool IsPointerOverUIExceptDialogueBox()
-{
-    if (EventSystem.current == null)
-        return false;
-
-    PointerEventData eventData = new PointerEventData(EventSystem.current);
-    eventData.position = Input.mousePosition;
-
-    List<RaycastResult> results = new List<RaycastResult>();
-    EventSystem.current.RaycastAll(eventData, results);
-
-    foreach (RaycastResult result in results)
     {
-        // 如果点到的是对话框或其子物体 → 放行
-        if (result.gameObject == dialogueBox ||
-            result.gameObject.transform.IsChildOf(dialogueBox.transform))
+        if (EventSystem.current == null)
+            return false;
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Input.mousePosition;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (RaycastResult result in results)
         {
-            continue;
+            // 放行：对话框本体或其子物体（包含名字Text、头像、内容Text等）
+            if (dialogueBox != null && result.gameObject.transform.IsChildOf(dialogueBox.transform))
+                continue;
+
+            // 点到了其他 UI
+            return true;
         }
 
-        // 点到了其他 UI
-        return true;
+        return false;
     }
 
-    return false;
-}
+    // ⭐ 统一处理名字显示/隐藏
+    void UpdateSpeakerName(DialogueLine line)
+    {
+        if (speakerNameText == null) return;
 
+        bool hasName = !string.IsNullOrEmpty(line.speakerName);
+        speakerNameText.gameObject.SetActive(hasName);
+        speakerNameText.text = hasName ? line.speakerName : "";
+    }
 
     public bool IsChoiceChosen(DialogueLine[] lines, int lineIndex, int choiceIndex)
     {
