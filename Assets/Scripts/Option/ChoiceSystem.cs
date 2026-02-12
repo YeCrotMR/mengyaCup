@@ -21,7 +21,7 @@ public class ChoiceSystemMulti : MonoBehaviour
     void Awake()
     {
         // 默认禁用界面
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     /// <summary>

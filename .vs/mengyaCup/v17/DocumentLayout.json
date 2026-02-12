@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\Git\\mengyaCup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\chat\\dialoguesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chat\\dialoguesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\chat\\dialoguelogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chat\\dialoguelogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\option\\choicesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\option\\choicesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\option\\choicetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\option\\choicetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\UI\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIManager.cs",
-              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\UI\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIManager.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAgwA8AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T11:05:44.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DialogueLogManager.cs",
-              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueLogManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Chat\\DialogueLogManager.cs",
-              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueLogManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Chat\\DialogueLogManager.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAzwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T14:02:31.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "DialogueSystem.cs",
               "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Chat\\DialogueSystem.cs",
               "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueSystem.cs",
               "RelativeToolTip": "Assets\\Scripts\\Chat\\DialogueSystem.cs",
-              "ViewState": "AQIAAPsAAAAAAAAAAAAxwA8AAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T14:01:14.688Z",
+              "WhenOpened": "2026-02-12T05:31:54.059Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChoiceSystem.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Option\\ChoiceSystem.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Option\\ChoiceSystem.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAmwBcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:28:48.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChoiceTrigger.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Option\\ChoiceTrigger.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Option\\ChoiceTrigger.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAApwBoAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:18:25.71Z"
             }
           ]
         }
