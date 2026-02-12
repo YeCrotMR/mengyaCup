@@ -9,6 +9,7 @@ public class DialogueLine
     public bool hasChoices = false;
     public DialogueChoice[] choices;
     public string speakerName;
+    public Sprite background;               // 新增：背景图片
 }
 
 [System.Serializable]

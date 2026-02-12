@@ -12,6 +12,8 @@ public class DialogueSystem : MonoBehaviour
     public TMP_Text speakerNameText;          // ⭐ 新增：说话者名字（单独的Text）
     public TMP_Text dialogueText;
     public Image characterPortrait;
+    public Image bigcharacterPortrait;
+    public Image backgroundImage;             // 新增：背景图片引用
 
     [Header("对话内容")]
     public DialogueLine[] dialogueLines;
@@ -38,6 +40,7 @@ public class DialogueSystem : MonoBehaviour
 
         if (dialogueBox != null) dialogueBox.SetActive(false);
         if (choicePanel != null) choicePanel.SetActive(false);
+        if (backgroundImage != null) backgroundImage.gameObject.SetActive(false); // 初始化隐藏背景
 
         if (speakerNameText != null)
         {
@@ -96,7 +99,12 @@ public class DialogueSystem : MonoBehaviour
 
         // 内容直接显示完整文本
         dialogueText.text = line.text;
-        SetIconPreserveHeight(characterPortrait, line.portrait);
+
+        // ⭐ 小头像+大头像都更新
+        SetPortraits(line);
+        
+        // ⭐ 更新背景
+        UpdateBackground(line);
 
         // Log（可保留“名字+内容”的格式）
         string displayText = string.IsNullOrEmpty(line.speakerName)
@@ -147,7 +155,12 @@ public class DialogueSystem : MonoBehaviour
         UpdateSpeakerName(line);
 
         dialogueText.text = "";
-        SetIconPreserveHeight(characterPortrait, line.portrait);
+
+        // ⭐ 小头像+大头像都更新
+        SetPortraits(line);
+        
+        // ⭐ 更新背景
+        UpdateBackground(line);
 
         foreach (char c in line.text)
         {
@@ -179,52 +192,97 @@ public class DialogueSystem : MonoBehaviour
 
         if (dialogueBox != null) dialogueBox.SetActive(false);
         if (dialogueText != null) dialogueText.text = "";
+
+        // ⭐ 小头像+大头像都清空
         if (characterPortrait != null) characterPortrait.sprite = null;
+        if (bigcharacterPortrait != null) bigcharacterPortrait.sprite = null;
 
         if (speakerNameText != null)
         {
             speakerNameText.text = "";
             speakerNameText.gameObject.SetActive(false);
         }
+        
+        if (backgroundImage != null) backgroundImage.gameObject.SetActive(false); // 结束对话时隐藏背景
 
         dialogueFinished = true;
     }
 
     void ShowChoices(DialogueChoice[] choices)
-{
-    canClickNext = false;
-    if (choicePanel != null) choicePanel.SetActive(true);
-
-    foreach (Transform child in choicePanel.transform)
-        Destroy(child.gameObject);
-
-    foreach (DialogueChoice choice in choices)
     {
-        GameObject btnObj = Instantiate(choiceButtonPrefab, choicePanel.transform);
+        canClickNext = false;
+        if (choicePanel != null) choicePanel.SetActive(true);
 
-        var image = btnObj.GetComponent<Image>();
-        var button = btnObj.GetComponent<Button>();
-        if (image != null) image.enabled = true;
-        if (button != null) button.enabled = true;
+        foreach (Transform child in choicePanel.transform)
+            Destroy(child.gameObject);
 
-        // ⭐ 使用 TextMeshProUGUI
-        TextMeshProUGUI btnText = btnObj.GetComponentInChildren<TextMeshProUGUI>();
-        if (btnText != null)
+        foreach (DialogueChoice choice in choices)
         {
-            btnText.enabled = true;
-            btnText.text = choice.choiceText;
+            GameObject btnObj = Instantiate(choiceButtonPrefab, choicePanel.transform);
+
+            var image = btnObj.GetComponent<Image>();
+            var button = btnObj.GetComponent<Button>();
+            if (image != null) image.enabled = true;
+            if (button != null) button.enabled = true;
+
+            // ⭐ 使用 TextMeshProUGUI
+            TextMeshProUGUI btnText = btnObj.GetComponentInChildren<TextMeshProUGUI>();
+            if (btnText != null)
+            {
+                btnText.enabled = true;
+                btnText.text = choice.choiceText;
+            }
+
+            button.onClick.AddListener(() =>
+            {
+                choice.wasChosen = true;
+                choicePanel.SetActive(false);
+                SetDialogue(choice.nextDialogue);
+                StartDialogue();
+            });
         }
-
-        button.onClick.AddListener(() =>
-        {
-            choice.wasChosen = true;
-            choicePanel.SetActive(false);
-            SetDialogue(choice.nextDialogue);
-            StartDialogue();
-        });
     }
-}
 
+    // ⭐ 新增：同时设置小头像和大头像
+    void SetPortraits(DialogueLine line)
+    {
+        // 小头像：不改变尺寸，仅设置图片（用户已在场景调整好宽高）
+        SetIconSimple(characterPortrait, line.portrait);
+        
+        // 大头像：保持原有逻辑（高度固定，宽度自适应）
+        SetIconPreserveHeight(bigcharacterPortrait, line.portrait);
+    }
+    
+    // ⭐ 更新背景图片
+    void UpdateBackground(DialogueLine line)
+    {
+        if (backgroundImage == null) return;
+
+        if (line.background != null)
+        {
+            backgroundImage.gameObject.SetActive(true);
+            backgroundImage.sprite = line.background;
+        }
+        else
+        {
+            // 如果当前句没有背景，是否需要隐藏？
+            // 通常有两种设计：
+            // 1. 隐藏背景（如下）
+            // 2. 保持上一句的背景（如果需要保持，就注释掉下面的 SetActive(false)）
+            // 这里暂定为：没有配置背景图则不显示背景
+             backgroundImage.gameObject.SetActive(false);
+        }
+    }
+
+    // 简单设置图片，不修改 RectTransform
+    private void SetIconSimple(Image image, Sprite sprite)
+    {
+        if (image == null) return;
+
+        image.sprite = sprite;
+        // 如果没有图片，则禁用 Image 组件以隐藏；否则启用
+        image.enabled = (sprite != null);
+    }
 
     private void SetIconPreserveHeight(Image image, Sprite sprite)
     {
@@ -270,7 +328,13 @@ public class DialogueSystem : MonoBehaviour
         UpdateSpeakerName(last);
 
         dialogueText.text = last.text;
-        SetIconPreserveHeight(characterPortrait, last.portrait);
+
+        // ⭐ 小头像+大头像都更新
+        SetIconSimple(characterPortrait, last.portrait);
+        SetIconPreserveHeight(bigcharacterPortrait, last.portrait);
+        
+        // ⭐ 更新背景
+        UpdateBackground(last);
 
         currentLine = dialogueLines.Length;
         EndDialogue();
@@ -290,6 +354,9 @@ public class DialogueSystem : MonoBehaviour
 
         // 内容只显示正文
         dialogueText.text = line.text;
+
+        // ⭐ 可选但推荐：跳过打字时头像也同步更新
+        SetPortraits(line);
 
         // Log（可保留“名字+内容”的格式）
         string displayText = string.IsNullOrEmpty(line.speakerName)
