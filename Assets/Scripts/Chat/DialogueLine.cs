@@ -10,6 +10,7 @@ public class DialogueLine
     public DialogueChoice[] choices;
     public string speakerName;
     public Sprite background;               // 新增：背景图片
+    public bool triggerFadeEffect = false;  // 新增：是否触发黑屏转场
 }
 
 [System.Serializable]

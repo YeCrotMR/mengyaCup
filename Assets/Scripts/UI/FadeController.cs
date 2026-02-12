@@ -53,7 +53,8 @@ public class FadeController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    private IEnumerator FadeOut()
+    // 公开 FadeOut 以供外部调用
+    public IEnumerator FadeOut()
     {
         float t = 0f;
         while (t < fadeDuration)
@@ -66,7 +67,8 @@ public class FadeController : MonoBehaviour
         SetAlpha(1f);
     }
 
-    private IEnumerator FadeIn()
+    // 公开 FadeIn 以供外部调用
+    public IEnumerator FadeIn()
     {
         float t = 0f;
         while (t < fadeDuration)
