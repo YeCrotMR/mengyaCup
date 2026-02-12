@@ -151,17 +151,34 @@ public class DialogueSystem : MonoBehaviour
         isTyping = true;
         canClickNext = false;
 
-        // ⭐ 名字单独显示
-        UpdateSpeakerName(line);
+        // ⭐ 1. 检查是否需要黑屏转场
+        if (line.triggerFadeEffect && FadeController.Instance != null)
+        {
+            // 淡出（变黑）
+            yield return StartCoroutine(FadeController.Instance.FadeOut());
 
-        dialogueText.text = "";
+            // ⭐ 2. 在全黑状态下更新所有 UI（名字、头像、背景、清空文本）
+            UpdateSpeakerName(line);
+            dialogueText.text = "";
+            SetPortraits(line);
+            UpdateBackground(line);
 
-        // ⭐ 小头像+大头像都更新
-        SetPortraits(line);
-        
-        // ⭐ 更新背景
-        UpdateBackground(line);
+            // 停顿一小会儿（可选，增加节奏感）
+            yield return new WaitForSeconds(0.2f);
 
+            // 淡入（变亮）
+            yield return StartCoroutine(FadeController.Instance.FadeIn());
+        }
+        else
+        {
+            // ⭐ 不需要转场，直接更新 UI
+            UpdateSpeakerName(line);
+            dialogueText.text = "";
+            SetPortraits(line);
+            UpdateBackground(line);
+        }
+
+        // ⭐ 3. 开始打字
         foreach (char c in line.text)
         {
             dialogueText.text += c;
