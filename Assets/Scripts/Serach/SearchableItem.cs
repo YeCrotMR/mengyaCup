@@ -15,7 +15,10 @@ public class SearchableItem : MonoBehaviour
         TriggerChoice,
 
         /// <summary>获得关键信息（特写图片）并记录至背包</summary>
-        KeyEvidenceToBackpack
+        KeyEvidenceToBackpack,
+
+        /// <summary>先播放对话，对话结束后自动获得关键信息并入包</summary>
+        DialogThenKeyEvidence
     }
 
     [Header("互动类型")]
@@ -35,6 +38,9 @@ public class SearchableItem : MonoBehaviour
     [TextArea(2, 4)]
     public string evidenceDescription = "证物的详细描述。";
     public Sprite evidenceCloseUpImage;
+
+    [Header("先对话后入包（类型为 DialogThenKeyEvidence 时使用）")]
+    public DialogueLine[] preEvidenceDialogueLines; // 获得证物前的铺垫对话
 
     [Header("可选：点击后禁用再次点击")]
     public bool oneTimeOnly = false;
@@ -65,6 +71,9 @@ public class SearchableItem : MonoBehaviour
                 break;
             case InteractionType.KeyEvidenceToBackpack:
                 RunKeyEvidence();
+                break;
+            case InteractionType.DialogThenKeyEvidence:
+                RunDialogThenKeyEvidence();
                 break;
         }
 
@@ -111,5 +120,29 @@ public class SearchableItem : MonoBehaviour
         var lines = new DialogueLine[] { line };
         DialogueSystem.Instance.SetDialogue(lines);
         DialogueSystem.Instance.StartDialogue();
+    }
+
+    private void RunDialogThenKeyEvidence()
+    {
+        // 1. 设置回调：当对话结束时，执行入包逻辑
+        DialogueSystem.Instance.onDialogueEndCallback = () =>
+        {
+            // 清除回调，防止影响后续对话
+            DialogueSystem.Instance.onDialogueEndCallback = null;
+            // 执行入包逻辑（复用 RunKeyEvidence）
+            RunKeyEvidence();
+        };
+
+        // 2. 播放铺垫对话
+        if (preEvidenceDialogueLines != null && preEvidenceDialogueLines.Length > 0)
+        {
+            DialogueSystem.Instance.SetDialogue(preEvidenceDialogueLines);
+            DialogueSystem.Instance.StartDialogue();
+        }
+        else
+        {
+            // 如果没配对话，直接给东西
+            RunKeyEvidence();
+        }
     }
 }

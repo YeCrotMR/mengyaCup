@@ -27,12 +27,17 @@ public class DialogueSystem : MonoBehaviour
     public bool autoStart = true;
     public bool dialogueFinished = false;
     public static bool isInDialogue = false;
+    public string dialogueID;
+    public bool triggerOnlyOnce;
 
     public int currentLine = 0;
     public bool isTyping = false;
     public bool canClickNext = false;
     public static DialogueSystem Instance;
     public int clickCount = 0;
+
+    // ⭐ 新增：对话结束时的回调（用于链式触发事件）
+    public System.Action onDialogueEndCallback;
 
     void Awake()
     {
@@ -102,7 +107,7 @@ public class DialogueSystem : MonoBehaviour
 
         // ⭐ 小头像+大头像都更新
         SetPortraits(line);
-        
+
         // ⭐ 更新背景
         UpdateBackground(line);
 
@@ -219,10 +224,17 @@ public class DialogueSystem : MonoBehaviour
             speakerNameText.text = "";
             speakerNameText.gameObject.SetActive(false);
         }
-        
-        if (backgroundImage != null) backgroundImage.gameObject.SetActive(false); // 结束对话时隐藏背景
+
+        // ⭐ 修改：结束对话时不再强制隐藏背景，保留最后一帧的背景图
+        // if (backgroundImage != null) backgroundImage.gameObject.SetActive(false); 
 
         dialogueFinished = true;
+
+        // ⭐ 触发回调（如果存在）
+        if (onDialogueEndCallback != null)
+        {
+            onDialogueEndCallback.Invoke();
+        }
     }
 
     void ShowChoices(DialogueChoice[] choices)
@@ -265,11 +277,11 @@ public class DialogueSystem : MonoBehaviour
     {
         // 小头像：不改变尺寸，仅设置图片（用户已在场景调整好宽高）
         SetIconSimple(characterPortrait, line.portrait);
-        
+
         // 大头像：保持原有逻辑（高度固定，宽度自适应）
         SetIconPreserveHeight(bigcharacterPortrait, line.portrait);
     }
-    
+
     // ⭐ 更新背景图片
     void UpdateBackground(DialogueLine line)
     {
@@ -286,8 +298,7 @@ public class DialogueSystem : MonoBehaviour
             // 通常有两种设计：
             // 1. 隐藏背景（如下）
             // 2. 保持上一句的背景（如果需要保持，就注释掉下面的 SetActive(false)）
-            // 这里暂定为：没有配置背景图则不显示背景
-             backgroundImage.gameObject.SetActive(false);
+            //backgroundImage.gameObject.SetActive(false);
         }
     }
 
@@ -349,7 +360,7 @@ public class DialogueSystem : MonoBehaviour
         // ⭐ 小头像+大头像都更新
         SetIconSimple(characterPortrait, last.portrait);
         SetIconPreserveHeight(bigcharacterPortrait, last.portrait);
-        
+
         // ⭐ 更新背景
         UpdateBackground(last);
 
