@@ -11,6 +11,7 @@
 UserSettings/
 
 # ========== Visual Studio / Rider / 其他 IDE ==========
+.vs/
 *.csproj
 *.unityproj
 *.sln
