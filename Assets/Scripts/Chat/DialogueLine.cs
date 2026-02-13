@@ -11,6 +11,13 @@ public class DialogueLine
     public string speakerName;
     public Sprite background;               // 新增：背景图片
     public bool triggerFadeEffect = false;  // 新增：是否触发黑屏转场
+
+    [Header("获得线索（可选）")]
+    public bool giveEvidence = false;
+    public string evidenceId;
+    public string evidenceTitle;
+    [TextArea] public string evidenceDesc;
+    public Sprite evidenceIcon;
 }
 
 [System.Serializable]

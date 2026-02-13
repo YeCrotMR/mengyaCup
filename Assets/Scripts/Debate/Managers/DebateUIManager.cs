@@ -19,6 +19,7 @@ namespace DebateSystem
         public GameObject dialoguePanel;   // 对应 DialogPanel
         public GameObject debatePanel;   // 对应 DebatePanel
         public GameObject menuPanel;     // 对应 MenuPanel
+        public GameObject backpackPanel; // 新增：BackpackPanel (虽然有 BackpackUI 管理，但这里可能需要控制整体显隐)
         
         [Header("Options UI (选项面板)")]
         // 辩论模式选项

@@ -18,7 +18,16 @@ public class BackpackExitButton : MonoBehaviour
 
     private void OnExitClick()
     {
-        DisableTarget();
+        // 优先调用 BackpackUI 的标准关闭流程（因为那里包含清理逻辑和遮罩关闭）
+        if (BackpackUI.Instance != null)
+        {
+            BackpackUI.Instance.CloseBackpack();
+        }
+        else
+        {
+            // 如果没有单例，则回退到简单的禁用逻辑
+            DisableTarget();
+        }
     }
 
     /// <summary>

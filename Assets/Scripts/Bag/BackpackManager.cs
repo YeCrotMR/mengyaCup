@@ -29,6 +29,8 @@ public class BackpackManager : MonoBehaviour
             return;
         }
         Instance = this;
+        // 确保是根物体，否则 DontDestroyOnLoad 无效
+        transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
 
         categoryUnlock[InfoCategory.Character] = true;

@@ -29,9 +29,15 @@ public class BackpackUI : MonoBehaviour
     public Text detailTitle;
     public Text detailDescription;
     public Image detailImage;
+    public Button presentButton; // 新增：出示按钮
 
     private InfoCategory currentTab = InfoCategory.Character;
     private List<GameObject> slotInstances = new List<GameObject>();
+    
+    // 选择模式相关
+    private bool isSelectionMode = false;
+    private System.Action<string> onEvidenceSelected;
+    private BackpackItem currentSelectedItem;
 
     private void Awake()
     {
@@ -44,6 +50,7 @@ public class BackpackUI : MonoBehaviour
 
         if (backpackPanel != null)
             backpackPanel.SetActive(false);
+        
 
         if(Black != null)
             Black.SetActive(false);
@@ -54,24 +61,61 @@ public class BackpackUI : MonoBehaviour
 
         if (detailPanel != null)
             detailPanel.SetActive(false);
+            
+        if (presentButton != null)
+        {
+            presentButton.onClick.AddListener(OnPresentButtonClicked);
+            presentButton.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>打开背包（可从背包按钮或出示证物时调用）</summary>
     public void OpenBackpack()
     {
+        isSelectionMode = false;
+        onEvidenceSelected = null;
+        
         if (backpackPanel == null) return;
 
         backpackPanel.SetActive(true);
         Black.SetActive(true);
         RefreshDisplay();
+        
+        if (detailPanel != null) detailPanel.SetActive(false);
+    }
+    
+    /// <summary>
+    /// 打开背包进入“出示证物”模式
+    /// </summary>
+    /// <param name="callback">当玩家点击出示按钮时触发的回调，参数为证物ID</param>
+    public void OpenForSelection(System.Action<string> callback)
+    {
+        isSelectionMode = true;
+        onEvidenceSelected = callback;
+        currentSelectedItem = null; // 重置当前选择
+        
+        if (backpackPanel == null) return;
+
+        backpackPanel.SetActive(true);
+        Black.SetActive(true);
+        RefreshDisplay();
+        
+        // 初始时不显示详情，也不显示出示按钮（因为还没选中）
+        if (detailPanel != null) detailPanel.SetActive(false);
+        if (presentButton != null) presentButton.gameObject.SetActive(false);
     }
 
     /// <summary>关闭背包</summary>
     public void CloseBackpack()
     {
+        isSelectionMode = false;
+        onEvidenceSelected = null;
+        currentSelectedItem = null;
+        
         if (backpackPanel == null) return;
 
         backpackPanel.SetActive(false);
+        if(Black != null) Black.SetActive(false); // 修复：同时关闭遮罩
 
         if (detailPanel != null)
             detailPanel.SetActive(false);
@@ -186,6 +230,8 @@ public class BackpackUI : MonoBehaviour
 
     private void ShowDetail(BackpackItem item)
     {
+        currentSelectedItem = item;
+        
         if (detailPanel != null) detailPanel.SetActive(true);
         if (detailTitle != null) detailTitle.text = item.title;
         if (detailDescription != null) detailDescription.text = item.description;
@@ -194,6 +240,24 @@ public class BackpackUI : MonoBehaviour
         {
             detailImage.gameObject.SetActive(item.image != null);
             detailImage.sprite = item.image;
+        }
+        
+        // 如果是选择模式，显示出示按钮
+        if (presentButton != null)
+        {
+            presentButton.gameObject.SetActive(isSelectionMode);
+        }
+    }
+    
+    private void OnPresentButtonClicked()
+    {
+        if (currentSelectedItem != null && onEvidenceSelected != null)
+        {
+            string id = currentSelectedItem.id;
+            // 先关闭背包
+            CloseBackpack();
+            // 再触发回调
+            onEvidenceSelected.Invoke(id);
         }
     }
 }

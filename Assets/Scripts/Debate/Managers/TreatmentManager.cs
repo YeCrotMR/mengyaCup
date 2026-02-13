@@ -428,6 +428,45 @@ namespace DebateSystem
                     Debug.Log("章节结束！");
                     return; 
 
+                case "LoadScene":
+                    if (line.parameters != null && line.parameters.Length > 0)
+                    {
+                        string sceneName = line.parameters[0];
+                        Debug.Log($"[Treatment] Loading scene: {sceneName}");
+                        // 尝试按名称加载，如果失败则尝试按构建索引 +1 加载
+                        if (UnityEngine.SceneManagement.SceneUtility.GetBuildIndexByScenePath(sceneName) != -1)
+                        {
+                            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"[Treatment] Scene '{sceneName}' not found in Build Settings. Trying to load next scene by build index...");
+                            int currentBuildIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+                            if (currentBuildIndex + 1 < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+                            {
+                                UnityEngine.SceneManagement.SceneManager.LoadScene(currentBuildIndex + 1);
+                            }
+                            else
+                            {
+                                Debug.LogError("[Treatment] Failed to load next scene. No more scenes in Build Settings.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // 如果没有参数，默认加载下一个场景
+                        int currentBuildIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+                        if (currentBuildIndex + 1 < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+                        {
+                            UnityEngine.SceneManagement.SceneManager.LoadScene(currentBuildIndex + 1);
+                        }
+                        else
+                        {
+                            Debug.LogError("[Treatment] Failed to load next scene. No more scenes in Build Settings.");
+                        }
+                    }
+                    return; // Stop execution after loading scene
+
                 case "LoadNextScript":
                     if (line.parameters != null && line.parameters.Length > 0)
                     {
@@ -531,6 +570,29 @@ namespace DebateSystem
                     }
                     break;
 
+                case "AddSuspicion":
+                    // 格式: [0]CharacterID, [1]Amount
+                    if (line.parameters != null && line.parameters.Length >= 2)
+                    {
+                        string charId = line.parameters[0];
+                        if (int.TryParse(line.parameters[1], out int amount))
+                        {
+                            if (GameManager.Instance)
+                            {
+                                GameManager.Instance.AddSuspicion(charId, amount);
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"[Treatment] AddSuspicion 参数错误: {line.parameters[1]} 不是有效的整数");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[Treatment] AddSuspicion 参数不足，需要 CharacterID, Amount");
+                    }
+                    break;
+
                 case "AddEvidence":
                     // 格式: [0]ID, [1]Title, [2]Desc, [3]IconPath(Optional)
                     if (line.parameters != null && line.parameters.Length >= 3)
@@ -548,6 +610,82 @@ namespace DebateSystem
                     else
                     {
                         Debug.LogWarning("[Treatment] AddEvidence 参数不足，至少需要 ID, Title, Description");
+                    }
+                    break;
+
+                case "RequireEvidence":
+                    // 格式: [0]CorrectEvidenceID, [1]SuccessJumpID, [2]FailJumpID
+                    if (line.parameters != null && line.parameters.Length >= 2)
+                    {
+                        string correctId = line.parameters[0];
+                        string successId = line.parameters[1];
+                        string failId = line.parameters.Length > 2 ? line.parameters[2] : "";
+
+                        if (BackpackUI.Instance)
+                        {
+                            // 暂时隐藏对话面板，避免遮挡
+                            if (DebateUIManager.Instance) DebateUIManager.Instance.ShowDialoguePanel(false);
+
+                            // 打开背包选择模式
+                            BackpackUI.Instance.OpenForSelection((selectedId) => {
+                                // 恢复对话面板
+                                if (DebateUIManager.Instance) DebateUIManager.Instance.ShowDialoguePanel(true);
+                                
+                                // 验证逻辑修改：
+                                // 1. 直接 ID 匹配
+                                // 2. 如果 selectedId 是 null/空，说明没选
+                                // 3. 如果 selectedId 对应的物品名字 == correctId (兼容用户需求：通过名字匹配)
+                                
+                                bool isCorrect = false;
+                                
+                                // 方式A: ID 完全匹配 (标准做法)
+                                if (selectedId == correctId) 
+                                {
+                                    isCorrect = true;
+                                }
+                                // 方式B: 兼容需求，通过 BackpackItem 的 Title 匹配
+                                else if (BackpackManager.Instance)
+                                {
+                                    var items = BackpackManager.Instance.GetAllItems();
+                                    var item = items.Find(x => x.id == selectedId);
+                                    if (item != null && item.title == correctId)
+                                    {
+                                        isCorrect = true;
+                                    }
+                                }
+
+                                if (isCorrect)
+                                {
+                                    Debug.Log($"[Treatment] 出示正确: {selectedId} / {correctId}");
+                                    JumpToTarget(successId);
+                                }
+                                else
+                                {
+                                    Debug.Log($"[Treatment] 出示错误: {selectedId} (期望: {correctId})");
+                                    if (!string.IsNullOrEmpty(failId))
+                                    {
+                                        JumpToTarget(failId);
+                                    }
+                                    else
+                                    {
+                                        Debug.LogWarning("未配置出示错误后的跳转分支，将继续执行下一行。");
+                                        NextLine(); 
+                                    }
+                                }
+                            });
+                            
+                            // 停止自动下一行，等待回调
+                            isWaitingForInput = false;
+                            return; 
+                        }
+                        else
+                        {
+                            Debug.LogError("[Treatment] RequireEvidence 失败: 找不到 BackpackUI 实例");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[Treatment] RequireEvidence 参数不足，需要 CorrectID, SuccessID");
                     }
                     break;
 

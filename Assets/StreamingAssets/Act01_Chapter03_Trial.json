@@ -1,673 +1,365 @@
 {
-    "chapterId": "Act01_第三章庭审",
+    "chapterId": "Act01_Chapter03_Trial",
     "lines": [
         {
+            "id": "line_2",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "A",
             "text": "这房间里的东西也太可疑了，要我说你就是凶手把",
             "portrait": "A/老囚1",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_1"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_3"
-        },
-        {
+            "id": "line_3",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "我之前是设计师，对精巧的东西有浓郁的兴趣，总不能因为这点就断定我是凶手把",
             "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_3"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_5"
-        },
-        {
+            "id": "line_4",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "A",
             "text": "即使这么说可所有不利的证据还是指向你，光这点你就很难洗脱嫌疑",
             "portrait": "A/老囚1",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_5"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_7"
-        },
-        {
+            "id": "line_5",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "哦？可我觉得酗酒伤人在动机上更合理哦",
             "portrait": "B/盗窃犯2",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_7"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_9"
-        },
-        {
+            "id": "line_6",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "动机...的确作案需要动机，大家昨天跟C在一块儿时干了什么？",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_9"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_11"
-        },
-        {
+            "id": "line_7",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "A",
             "text": "撕...我记得他是说要送我一瓶酒来着？但最后好像不了了之了。",
             "portrait": "A/老囚1",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_11"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_13"
-        },
-        {
+            "id": "line_8",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "晚上C与往常一样来我房间里向我传教，我对他的教义不感兴趣，他自己说完就走了",
             "portrait": "B/盗窃犯2",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_13"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_14"
-        },
-        {
+            "id": "line_9",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "（说谎）我在白天倒是见过他，口里神神叨叨的晚上喝醉后就不得而知了。",
             "portrait": "Player/主角1",
-            "position": "center",
-            "distance": "far",
-            "voice": "",
-            "id": "line_14"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "center"
-            ],
-            "id": "remove_center_before_line_16"
-        },
-        {
+            "id": "line_10",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "总感觉有些话语与之前自相矛盾...",
             "portrait": "Warden/典狱长1",
-            "position": "center",
-            "distance": "far",
-            "voice": "",
-            "id": "line_16"
+            "position": "center"
         },
         {
+            "id": "line_11",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "A|line_18"
-            ],
-            "id": "line_17"
+                "A|branch_a_start",
+                "B|branch_b_start"
+            ]
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "center"
-            ],
-            "id": "remove_center_before_line_19"
-        },
-        {
+            "id": "branch_a_start",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "天下没有免费的午餐，你还说不了了之？不不不，证据就是：",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_19"
+            "position": "left"
         },
         {
-            "type": "dialogue",
-            "speaker": "我",
-            "text": "就是你房间里的那瓶酒，况且也不是白送的把，我不行一个酒鬼还有收集卷轴的习惯",
-            "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_20"
-        },
-        {
+            "id": "line_12",
             "type": "command",
-            "command": "RemoveCharacter",
+            "command": "RequireEvidence",
             "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_22"
+                "酒瓶",
+                "branch_a_success",
+                "branch_a_fail"
+            ]
         },
         {
+            "id": "branch_a_success",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "D",
+            "text": "就是你房间里的那瓶酒，况且也不是白送的把，我不信一个酒鬼还有收集卷轴的习惯",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_13",
+            "type": "dialogue",
+            "speaker": "A",
             "text": "可这...又说明什么呢？我咬死是我不记得了你又怎么办？",
             "portrait": "A/老囚1",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_22"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_24"
-        },
-        {
+            "id": "line_14",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "愚蠢，都到了这一地步了还敢装傻充楞吗",
             "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_24"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_26"
-        },
-        {
+            "id": "line_15",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "说明酒是你自己拿的，因为C没有兑现他的承诺于是你擅自闯入了C的房间。",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_26"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_28"
-        },
-        {
+            "id": "line_16",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "A",
             "text": "等..等等......",
             "portrait": "A/老囚1",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_28"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_30"
-        },
-        {
+            "id": "line_17",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "胜负已分，你的说辞站不住脚",
             "portrait": "Warden/典狱长1",
-            "position": "center",
-            "distance": "far",
-            "voice": "",
-            "id": "line_30"
+            "position": "center"
         },
         {
+            "id": "line_18",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": [
-                "A",
-                "25"
-            ],
-            "id": "line_31"
+            "parameters": ["A", "25"]
         },
         {
+            "id": "line_19",
             "type": "command",
             "command": "Jump",
-            "parameters": [
-                "debate_merge_18"
-            ],
-            "id": "line_32"
+            "parameters": ["trial_end"]
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "center"
-            ],
-            "id": "remove_center_before_line_34"
-        },
-        {
+            "id": "branch_a_fail",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "这点....能证明",
             "portrait": "Player/主角2",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_34"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_36"
-        },
-        {
+            "id": "line_20",
             "type": "dialogue",
-            "speaker": "老囚",
+            "speaker": "A",
             "text": "果然当初就该把你往死里打！",
             "portrait": "A/老囚2",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_36"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_38"
-        },
-        {
+            "id": "line_21",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "赶紧投票把，浪费时间",
             "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_38"
+            "position": "right"
         },
         {
+            "id": "line_22",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": [
-                "玩家",
-                "25"
-            ],
-            "id": "line_39"
+            "parameters": ["D", "25"]
         },
         {
+            "id": "line_23",
             "type": "command",
             "command": "Jump",
-            "parameters": [
-                "debate_merge_18"
-            ],
-            "id": "line_40"
+            "parameters": ["trial_end"]
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_41"
-        },
-        {
+            "id": "branch_b_start",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "你隐瞒了事实真相，这点就是",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_41"
+            "position": "left"
         },
         {
+            "id": "line_24",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "黑皮书",
+                "branch_b_success_1",
+                "branch_b_fail_1"
+            ]
+        },
+        {
+            "id": "branch_b_success_1",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "你说你一直在看书，那这本与众不同的书该怎么解释",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_42"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_44"
-        },
-        {
+            "id": "line_25",
             "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "我有什么需要解释的？",
             "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_44"
+            "position": "right"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_46"
-        },
-        {
+            "id": "line_26",
             "type": "dialogue",
-            "speaker": "我",
-            "text": "你不是对宗教无感吗，怎么会看这种书？",
+            "speaker": "D",
+            "text": "你不是对宗教无感吗，怎么会看这种书？看位置恐怕是昨天才看，或是昨天某人才给你？",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_46"
+            "position": "left"
         },
         {
+            "id": "line_27",
             "type": "dialogue",
-            "speaker": "我",
-            "text": "看位置恐怕是昨天才看，或是昨天某人才给你？",
-            "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_47"
-        },
-        {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_49"
-        },
-        {
-            "type": "dialogue",
-            "speaker": "盗窃犯",
-            "text": "呃！！！",
+            "speaker": "B",
+            "text": "呃！！！也有可能只是我没发现这本书，谁知道C什么时候留下来的",
             "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_49"
+            "position": "right"
         },
         {
+            "id": "line_28",
             "type": "dialogue",
-            "speaker": "盗窃犯",
-            "text": "也有可能只是我没发现这本书，谁知道C什么时候留下来的",
-            "portrait": "B/盗窃犯",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_50"
+            "speaker": "D",
+            "text": "不，唯独你不会犯这种错误",
+            "portrait": "Player/主角1",
+            "position": "left"
         },
         {
+            "id": "line_29",
             "type": "command",
-            "command": "RemoveCharacter",
+            "command": "RequireEvidence",
             "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_52"
+                "羊皮纸卷",
+                "branch_b_success_2",
+                "branch_b_fail_2"
+            ]
         },
         {
+            "id": "branch_b_success_2",
             "type": "dialogue",
-            "speaker": "我",
-            "text": "不，唯独你不会发这种错误",
+            "speaker": "D",
+            "text": "你强大的控制欲不会允许这种错误\n你并非没理C反而达成了与A和C同样的锲约关系，这样一来，你也有了去C房间的理由",
             "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_52"
+            "position": "left"
         },
         {
-            "type": "debate",
-            "debateConfig": {
-                "timeLimit": 30,
-                "sentences": [
-                    {
-                        "id": "s1",
-                        "text": "能证明B不可能犯这种错误的是：",
-                        "isWeakPoint": true,
-                        "correctEvidenceId": "TODO"
-                    }
-                ],
-                "options": [
-                    {
-                        "id": "opt1",
-                        "text": "Success",
-                        "isCorrect": true,
-                        "nextLineId": "line_54",
-                        "penalty": 0
-                    },
-                    {
-                        "id": "opt2",
-                        "text": "Fail",
-                        "isCorrect": false,
-                        "nextLineId": "line_60",
-                        "penalty": 500
-                    }
-                ]
-            },
-            "id": "line_53"
-        },
-        {
+            "id": "line_30",
             "type": "dialogue",
-            "speaker": "我",
-            "text": "你强大的控制欲不会允许这种错误",
-            "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_54"
-        },
-        {
-            "type": "dialogue",
-            "speaker": "我",
-            "text": "你并非没理C反而达成了与A和C同样的锲约关系，这样一来，你也有了去C房间的理由",
-            "portrait": "Player/主角1",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_55"
-        },
-        {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_57"
-        },
-        {
-            "type": "dialogue",
-            "speaker": "盗窃犯",
+            "speaker": "B",
             "text": "呵呵，确实如你所说，但我去只是寒暄。为了避嫌我只好撒谎说没理C",
             "portrait": "B/盗窃犯2",
-            "position": "right",
-            "distance": "far",
-            "voice": "",
-            "id": "line_57"
+            "position": "right"
         },
         {
+            "id": "line_31",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": [
-                "B",
-                "25"
-            ],
-            "id": "line_58"
+            "parameters": ["B", "25"]
         },
         {
+            "id": "line_32_b_end",
             "type": "command",
             "command": "Jump",
-            "parameters": [
-                "dive_merge_54"
-            ],
-            "id": "line_59"
+            "parameters": ["trial_end"]
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "right"
-            ],
-            "id": "remove_right_before_line_61"
-        },
-        {
+            "id": "branch_b_fail_2",
             "type": "dialogue",
-            "speaker": "我",
+            "speaker": "D",
             "text": "对！就是这个",
             "portrait": "Player/主角2",
-            "position": "left",
-            "distance": "far",
-            "voice": "",
-            "id": "line_61"
+            "position": "left"
         },
         {
-            "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "left"
-            ],
-            "id": "remove_left_before_line_63"
-        },
-        {
+            "id": "line_33",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "这根本说明不了任何问题，请你深思熟虑后再发言好吗",
             "portrait": "Warden/典狱长1",
-            "position": "center",
-            "distance": "far",
-            "voice": "",
-            "id": "line_63"
+            "position": "center"
         },
         {
+            "id": "line_34",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": [
-                "玩家",
-                "25"
-            ],
-            "id": "line_64"
+            "parameters": ["D", "25"]
         },
         {
-            "type": "debate",
-            "debateConfig": {
-                "timeLimit": 30,
-                "sentences": [
-                    {
-                        "id": "s1",
-                        "text": "",
-                        "isWeakPoint": true,
-                        "correctEvidenceId": "TODO"
-                    }
-                ],
-                "options": [
-                    {
-                        "id": "opt1",
-                        "text": "Success",
-                        "isCorrect": true,
-                        "nextLineId": "dive_success_65",
-                        "penalty": 0
-                    },
-                    {
-                        "id": "opt2",
-                        "text": "Fail",
-                        "isCorrect": false,
-                        "nextLineId": "dive_fail_65",
-                        "penalty": 500
-                    }
-                ]
-            },
-            "id": "line_65"
-        },
-        {
+            "id": "line_35",
             "type": "command",
-            "command": "RemoveCharacter",
-            "parameters": [
-                "center"
-            ],
-            "id": "remove_center_before_line_704"
+            "command": "Jump",
+            "parameters": ["trial_end"]
         },
         {
+            "id": "branch_b_fail_1",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "对！就是这个",
+            "portrait": "Player/主角2",
+            "position": "left"
+        },
+        {
+            "id": "line_36",
+            "type": "dialogue",
+            "speaker": "典狱长",
+            "text": "这根本说明不了任何问题，请你深思熟虑后再发言好吗",
+            "portrait": "Warden/典狱长1",
+            "position": "center"
+        },
+        {
+            "id": "line_37",
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": ["D", "25"]
+        },
+        {
+            "id": "line_38",
+            "type": "command",
+            "command": "Jump",
+            "parameters": ["trial_end"]
+        },
+        {
+            "id": "trial_end",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "记录完成，下一轮。",
             "portrait": "Warden/典狱长1",
-            "position": "center",
-            "distance": "far",
-            "voice": "",
-            "id": "line_67"
+            "position": "center"
+        },
+        {
+            "id": "line_40_load",
+            "type": "command",
+            "command": "LoadScene"
         }
     ]
 }

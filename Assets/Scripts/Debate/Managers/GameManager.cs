@@ -33,9 +33,9 @@ namespace DebateSystem
         */
         
         /// <summary>
-        /// 玩家收集到的证据 ID 列表。
+        /// 角色嫌疑度字典 (ID -> Value)
         /// </summary>
-        // public List<string> collectedEvidence = new List<string>(); // 使用 BackpackManager 接管
+        public Dictionary<string, int> characterSuspicion = new Dictionary<string, int>();
 
         #endregion
 
@@ -44,82 +44,43 @@ namespace DebateSystem
         protected override void Awake()
         {
             base.Awake();
-        }
-
-        private void Update()
-        {
-            // 如果处于菜单或暂停状态，不执行 Update
-            /*
-            if (!IsDebateLogicAllowed())
+            if (transform.parent != null)
             {
-                return;
+                transform.SetParent(null);
             }
-            */
-            // Timer update logic removed
+            DontDestroyOnLoad(gameObject);
         }
-
-        #endregion
-
-        #region 状态管理方法
-
-        /*
-        /// <summary>
-        /// 设置新的游戏状态。
-        /// </summary>
-        public void SetState(GameState newState)
-        {
-            if (currentState == newState) return;
-
-            Debug.Log($"[GameManager] State changed: {currentState} -> {newState}");
-            currentState = newState;
-            
-            OnStateChanged(newState);
-        }
-
-        private void OnStateChanged(GameState newState)
-        {
-            switch (newState)
-            {
-                case GameState.UI_Menu:
-                    Time.timeScale = 0f; // 暂停游戏时间
-                    isGamePaused = true;
-                    break;
-                case GameState.Normal:
-                case GameState.Dialogue:
-                case GameState.Debate:
-                case GameState.Cutscene:
-                    Time.timeScale = 1f; // 恢复游戏时间
-                    isGamePaused = false;
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// 检查是否允许玩家输入（移动、点击互动物品）。
-        /// </summary>
-        public bool IsInputAllowed()
-        {
-            return currentState == GameState.Normal;
-        }
-
-        /// <summary>
-        /// 检查是否允许辩论系统的逻辑更新。
-        /// </summary>
-        public bool IsDebateLogicAllowed()
-        {
-            // 如果暂停了，或者打开了菜单，都不允许
-            if (isGamePaused) return false;
-            if (currentState == GameState.UI_Menu) return false;
-            
-            return true;
-        }
-        */
 
         #endregion
 
         #region 公共方法
         
         // ReduceTime method removed
+
+        /// <summary>
+        /// 增加角色嫌疑度
+        /// </summary>
+        public void AddSuspicion(string charId, int amount)
+        {
+            if (!characterSuspicion.ContainsKey(charId))
+            {
+                characterSuspicion[charId] = 0;
+            }
+            characterSuspicion[charId] += amount;
+            Debug.Log($"[GameManager] 角色 {charId} 嫌疑度增加 {amount}, 当前: {characterSuspicion[charId]}");
+            
+            // 如果需要更新UI或背包显示，可以在这里发送事件
+        }
+
+        /// <summary>
+        /// 获取角色嫌疑度
+        /// </summary>
+        public int GetSuspicion(string charId)
+        {
+            if (characterSuspicion.ContainsKey(charId))
+                return characterSuspicion[charId];
+            return 0;
+        }
 
         /// <summary>
         /// 添加证据到背包。

@@ -9,33 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Test/UI.unity
-    guid: 49390f0b0a94e034980dd447e6db0b2d
-  - enabled: 1
-    path: Assets/Prefabs/Backpack.unity
-    guid: f87dfa2fe3b184d43a03c7bb28fb90fc
-  - enabled: 1
     path: Assets/Scenes/Adv/Adv.unity
     guid: 8eabc4ed1673c874dbcf0c9bf2a1862f
   - enabled: 1
     path: Assets/Scenes/Debate/Debate.unity
-    guid: 22cb14366fb1808428c183d7a3ef1d8b
+    guid: a7b618fc8dddd3544a63b2930894f964
   - enabled: 1
-    path: Assets/Scenes/Setting.unity
-    guid: 1e21bc7ffbe2164409aa98601c290843
+    path: Assets/Scenes/Adv/Adv_2.unity
+    guid: 56c678435f6688946ac04f6b0fabf142
   - enabled: 1
-    path: Assets/Scenes/Test/Backpack.unity
-    guid: 60eb27503b43b494aaaaa2b727a3c102
+    path: Assets/Scenes/Debate/Debate_2.unity
+    guid: e3fee7182270fb04e9ece9d53111bb9f
   - enabled: 1
-    path: Assets/Scripts/Settings/Scenes/URP2DSceneTemplate.unity
-    guid: 9ed3c9eacdcdd924eb181fb2e6f84116
+    path: Assets/Scenes/Adv/Adv_3.unity
+    guid: 18a425fa7059cb24fac3b9fbf782e1da
   - enabled: 1
-    path: Assets/Scripts/URP/URP2DSceneTemplate.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Debate/Debate_3.unity
+    guid: 325efa29fa23c674093de088e538ae86
   - enabled: 1
-    path: Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Basic.unity
-    guid: e026d555eae824f65922633f37a14385
+    path: Assets/Scenes/Adv/Adv_4.unity
+    guid: b6612aa8319e55c419499fb3e28ebd7a
   - enabled: 1
-    path: Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Standard.unity
-    guid: 5cae0d87369a2405eaa962b8d920b947
+    path: Assets/Scenes/Debate/Debate_4.unity
+    guid: 6e3702c0e2060854d9e8d6f826d67c61
   m_configObjects: {}

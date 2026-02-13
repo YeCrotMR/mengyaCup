@@ -60,10 +60,10 @@ public class MainMenuController : MonoBehaviour
     void InitializeButtonDisplay()
     {
         // 当前使用文字版本，隐藏图片组件
-        if (startGameImage != null) startGameImage.enabled = false;
+        if (startGameImage != null) startGameImage.enabled = true;
         if (loadGameImage != null) loadGameImage.enabled = false;
         if (settingsImage != null) settingsImage.enabled = false;
-        if (quitGameImage != null) quitGameImage.enabled = false;
+        if (quitGameImage != null) quitGameImage.enabled = true;
 
         // 确保文字组件启用
         if (startGameText != null) startGameText.enabled = true;

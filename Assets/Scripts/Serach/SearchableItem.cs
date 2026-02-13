@@ -44,6 +44,9 @@ public class SearchableItem : MonoBehaviour
 
     [Header("可选：点击后禁用再次点击")]
     public bool oneTimeOnly = false;
+    
+    // ⭐ 公开属性：是否已被调查过
+    public bool IsUsed => used;
 
     private bool used = false;
     private Collider2D col2d;

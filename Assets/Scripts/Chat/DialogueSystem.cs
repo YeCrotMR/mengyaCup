@@ -105,6 +105,12 @@ public class DialogueSystem : MonoBehaviour
         // 内容直接显示完整文本
         dialogueText.text = line.text;
 
+        // ⭐ 立即发放线索（如果有）
+        if (line.giveEvidence && BackpackManager.Instance != null)
+        {
+             BackpackManager.Instance.AddEvidence(line.evidenceId, line.evidenceTitle, line.evidenceDesc, line.evidenceIcon);
+        }
+
         // ⭐ 小头像+大头像都更新
         SetPortraits(line);
 
@@ -192,6 +198,17 @@ public class DialogueSystem : MonoBehaviour
 
         isTyping = false;
 
+        // ⭐ 4. 如果配置了“获得线索”，在打字结束后自动发放
+        if (line.giveEvidence && BackpackManager.Instance != null)
+        {
+            // 避免重复获得（可选，看背包逻辑是否已去重）
+            BackpackManager.Instance.AddEvidence(line.evidenceId, line.evidenceTitle, line.evidenceDesc, line.evidenceIcon);
+            Debug.Log($"[DialogueSystem] 随对话获得线索：{line.evidenceTitle}");
+            
+            // 可选：弹出一个临时的小提示（Toast）告诉玩家获得了物品
+            // UIManager.Instance.ShowToast($"获得了线索：{line.evidenceTitle}");
+        }
+
         // Log（可保留“名字+内容”的格式）
         string displayText = string.IsNullOrEmpty(line.speakerName)
             ? line.text
@@ -216,8 +233,16 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueText != null) dialogueText.text = "";
 
         // ⭐ 小头像+大头像都清空
-        if (characterPortrait != null) characterPortrait.sprite = null;
-        if (bigcharacterPortrait != null) bigcharacterPortrait.sprite = null;
+        if (characterPortrait != null) 
+        {
+            characterPortrait.sprite = null;
+            characterPortrait.enabled = false; // 隐藏以避免显示白色方块
+        }
+        if (bigcharacterPortrait != null) 
+        {
+            bigcharacterPortrait.sprite = null;
+            bigcharacterPortrait.enabled = false; // 隐藏以避免显示白色方块
+        }
 
         if (speakerNameText != null)
         {
@@ -323,8 +348,10 @@ public class DialogueSystem : MonoBehaviour
         if (sprite == null)
         {
             image.rectTransform.sizeDelta = new Vector2(0, image.rectTransform.sizeDelta.y);
+            image.enabled = false;
             return;
         }
+        image.enabled = true;
 
         float fixedHeight = image.rectTransform.sizeDelta.y;
         float aspectRatio = (float)sprite.texture.width / sprite.texture.height;
@@ -363,6 +390,12 @@ public class DialogueSystem : MonoBehaviour
 
         // ⭐ 更新背景
         UpdateBackground(last);
+
+        // ⭐ 检查最后一句是否有线索（跳过打字也得给）
+        if (last.giveEvidence && BackpackManager.Instance != null)
+        {
+             BackpackManager.Instance.AddEvidence(last.evidenceId, last.evidenceTitle, last.evidenceDesc, last.evidenceIcon);
+        }
 
         currentLine = dialogueLines.Length;
         EndDialogue();

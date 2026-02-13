@@ -3,20 +3,48 @@
   "WorkspaceRootPath": "E:\\Git\\mengyaCup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\serach\\searchableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\ui\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\serach\\explorationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\serach\\explorationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\debate\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\debate\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\bag\\backpackui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bag\\backpackui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\bag\\backpackbuttonopener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bag\\backpackbuttonopener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\bag\\backpackmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bag\\backpackmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\debate\\managers\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\debate\\managers\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\debate\\managers\\treatmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\debate\\managers\\treatmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\debate\\managers\\debateuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\debate\\managers\\debateuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\serach\\searchableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\serach\\searchableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\chat\\dialoguesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chat\\dialoguesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|e:\\git\\mengyacup\\assets\\scripts\\option\\choicesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\option\\choicesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\option\\choicetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\option\\choicetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69D1AA68-9E09-FABC-E8CA-B59895FBA6DE}|Assembly-CSharp.csproj|E:\\Git\\mengyaCup\\assets\\scripts\\chat\\dialogueline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,6 +67,119 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainMenuController.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\UI\\MainMenuController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuController.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\UI\\MainMenuController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenuController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAgwEEAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T16:01:22.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExplorationManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Serach\\ExplorationManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Serach\\ExplorationManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Serach\\ExplorationManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Serach\\ExplorationManager.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAmwFYAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T15:28:17.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BackpackButtonOpener.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackButtonOpener.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bag\\BackpackButtonOpener.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackButtonOpener.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bag\\BackpackButtonOpener.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T13:08:33.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BackpackUI.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bag\\BackpackUI.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bag\\BackpackUI.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA2wHUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:29:28.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BackpackManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bag\\BackpackManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Bag\\BackpackManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bag\\BackpackManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA2wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:28:47.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Debate\\Managers\\AudioManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Debate\\Managers\\AudioManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T10:31:05.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Debate\\Managers\\GameManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Debate\\Managers\\GameManager.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAxwDUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T10:27:56.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TreatmentManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\TreatmentManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Debate\\Managers\\TreatmentManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\TreatmentManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Debate\\Managers\\TreatmentManager.cs",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAmwIYAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T10:03:38.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DebateUIManager.cs",
+              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\DebateUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Debate\\Managers\\DebateUIManager.cs",
+              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Debate\\Managers\\DebateUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Debate\\Managers\\DebateUIManager.cs",
+              "ViewState": "AQIAAFYCAAAAAAAAAAAiwCACAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T10:03:06.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "SearchableItem.cs",
               "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Serach\\SearchableItem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Serach\\SearchableItem.cs",
@@ -46,12 +187,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Serach\\SearchableItem.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA2wBQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T15:49:51.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T15:49:51.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "DialogueLine.cs",
               "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueLine.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Chat\\DialogueLine.cs",
@@ -63,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "DialogueSystem.cs",
               "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Chat\\DialogueSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Chat\\DialogueSystem.cs",
@@ -71,33 +211,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Chat\\DialogueSystem.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAmwB4AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T05:31:54.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChoiceSystem.cs",
-              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceSystem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Option\\ChoiceSystem.cs",
-              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceSystem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Option\\ChoiceSystem.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAUwAYAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T04:28:48.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChoiceTrigger.cs",
-              "DocumentMoniker": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Option\\ChoiceTrigger.cs",
-              "ToolTip": "E:\\Git\\mengyaCup\\Assets\\Scripts\\Option\\ChoiceTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Option\\ChoiceTrigger.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAzwAMAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T04:18:25.71Z"
+              "WhenOpened": "2026-02-12T05:31:54.059Z"
             }
           ]
         }
