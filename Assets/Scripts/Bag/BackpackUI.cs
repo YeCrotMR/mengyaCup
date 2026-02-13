@@ -12,6 +12,7 @@ public class BackpackUI : MonoBehaviour
 
     [Header("根面板")]
     public GameObject backpackPanel;
+    public GameObject Black;
 
     [Header("右侧标签（信息种类）")]
     public Button tabCharacter;
@@ -44,6 +45,9 @@ public class BackpackUI : MonoBehaviour
         if (backpackPanel != null)
             backpackPanel.SetActive(false);
 
+        if(Black != null)
+            Black.SetActive(false);
+
         if (tabCharacter != null) tabCharacter.onClick.AddListener(() => SwitchTab(InfoCategory.Character));
         if (tabSuspicion != null) tabSuspicion.onClick.AddListener(() => SwitchTab(InfoCategory.Suspicion));
         if (tabConclusion != null) tabConclusion.onClick.AddListener(() => SwitchTab(InfoCategory.Conclusion));
@@ -58,6 +62,7 @@ public class BackpackUI : MonoBehaviour
         if (backpackPanel == null) return;
 
         backpackPanel.SetActive(true);
+        Black.SetActive(true);
         RefreshDisplay();
     }
 

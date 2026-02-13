@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Prefabs/Backpack.unity
     guid: f87dfa2fe3b184d43a03c7bb28fb90fc
   - enabled: 1
-    path: Assets/Scenes/Adv.unity
+    path: Assets/Scenes/Adv/Adv.unity
     guid: 8eabc4ed1673c874dbcf0c9bf2a1862f
   - enabled: 1
-    path: Assets/Scenes/Debate.unity
+    path: Assets/Scenes/Debate/Debate.unity
     guid: 22cb14366fb1808428c183d7a3ef1d8b
   - enabled: 1
     path: Assets/Scenes/Setting.unity

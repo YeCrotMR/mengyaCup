@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+using DebateSystem; // 引入 DebateSystem 以访问 GameManager
 
 public class UIManager : MonoBehaviour
 {
@@ -45,10 +45,10 @@ public class UIManager : MonoBehaviour
 {
     if (isTransitioning) return;
 
-    if (Input.GetKeyDown(KeyCode.Escape)
-        && SceneManager.GetActiveScene().name != "start"
-        && SceneManager.GetActiveScene().name != "gameover")
-    {
+        if (Input.GetKeyDown(KeyCode.Escape)
+            && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "start"
+            && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "gameover")
+        {
         if (uiStack.Count == 0)
         {
             PushUI(homepage);
@@ -114,9 +114,9 @@ public class UIManager : MonoBehaviour
 
         isUIMode = true; // 打开 UI 时禁用 WASD
 
-        if (panel == homepage && Time.timeScale != 0f)
+        if (panel == homepage)
         {
-            Time.timeScale = 0f;
+            // GameManager.Instance?.SetState(GameManager.GameState.UI_Menu);
         }
 
         
@@ -144,8 +144,8 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeOut(uiBackground));
     }
 
-    Time.timeScale = 1f;
-    isUIMode = false;
+    // GameManager.Instance?.SetState(GameManager.GameState.Normal); // 恢复 Normal
+        isUIMode = false;
 }
 
 
@@ -167,7 +167,7 @@ public class UIManager : MonoBehaviour
             SetPanelVisible(uiBackground, false);
         }
 
-        Time.timeScale = 1f;
+        // GameManager.Instance?.SetState(GameManager.GameState.Normal);
         isUIMode = false;
     }
 

@@ -643,6 +643,7 @@ MonoBehaviour:
   - "\u4EBA\u7269\u4E8C"
   - "\u4EBA\u7269\u4E09"
   - "\u4EBA\u7269\u56DB"
+  initialCharacterSprites: []
 --- !u!4 &1296093725
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,8 +1292,6 @@ MonoBehaviour:
   detailTitle: {fileID: 1988819454}
   detailDescription: {fileID: 1766017856}
   detailImage: {fileID: 573387466}
-  uiManager: {fileID: 0}
-  useUIManagerStack: 1
 --- !u!114 &1765780480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,8 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c4d6e8f0a21436587092a1b3c5d7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeAsPanel: 0
-  targetSceneName: UI
+  targetToDisable: {fileID: 0}
 --- !u!1 &1888888007
 GameObject:
   m_ObjectHideFlags: 0

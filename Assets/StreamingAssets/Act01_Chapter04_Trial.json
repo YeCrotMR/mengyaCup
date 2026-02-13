@@ -1,0 +1,506 @@
+{
+    "chapterId": "Act01_第四章庭审",
+    "lines": [
+        {
+            "type": "dialogue",
+            "speaker": "老囚",
+            "text": "很可疑啊，看不懂的档案加上没有一点蛛丝马迹的房间",
+            "portrait": "A/老囚1",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_2"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "盗窃犯",
+            "text": "唯一的线索还是与C息息相关宗教项链，我只能认为房间是你精心布置后的样子",
+            "portrait": "B/盗窃犯",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_4"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "老囚",
+            "text": "说起来之前都是你在指认啊。不知不觉陷入你的话术里去了",
+            "portrait": "A/老囚2",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_6"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "盗窃犯",
+            "text": "的确，太多疑点集合在你身上了，后续言语如有冒犯，还请海涵",
+            "portrait": "B/盗窃犯2",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_8"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "right"
+            ],
+            "id": "remove_right_before_line_10"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "（啧，这下麻烦了）",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_10"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "left"
+            ],
+            "id": "remove_left_before_line_12"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "盗窃犯",
+            "text": "首先请回答，为什么会有十字架项链出现在你的房间里",
+            "portrait": "B/盗窃犯",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_12"
+        },
+        {
+            "type": "debate",
+            "debateConfig": {
+                "timeLimit": 30,
+                "sentences": [
+                    {
+                        "id": "s1",
+                        "text": "能证明十字架与玩家无关的线索是",
+                        "isWeakPoint": true,
+                        "correctEvidenceId": "TODO"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "opt1",
+                        "text": "Success",
+                        "isCorrect": true,
+                        "nextLineId": "line_14",
+                        "penalty": 0
+                    },
+                    {
+                        "id": "opt2",
+                        "text": "Fail",
+                        "isCorrect": false,
+                        "nextLineId": "line_23",
+                        "penalty": 500
+                    }
+                ]
+            },
+            "id": "line_13"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "right"
+            ],
+            "id": "remove_right_before_line_15"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "还解释什么？这根本就不是我的东西",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_15"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "那你们能解释出你们牢房里的十字架物品吗？",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_16"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "只能说是C给我们每人都交换了宗教内物件，身为",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_17"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "left"
+            ],
+            "id": "remove_left_before_line_19"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "老囚",
+            "text": "哈？你什么时候又成基督信徒了？",
+            "portrait": "A/老囚2",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_19"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "right"
+            ],
+            "id": "remove_right_before_line_21"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "我一直都是啊？不然你以为我怎么进来的？",
+            "portrait": "Player/主角2",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_21"
+        },
+        {
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "dive_merge_14"
+            ],
+            "id": "line_22"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "这个理由能说服你们吗",
+            "portrait": "Player/主角2",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_24"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "left"
+            ],
+            "id": "remove_left_before_line_26"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "老囚",
+            "text": "你觉得呢？",
+            "portrait": "A/老囚2",
+            "position": "right",
+            "distance": "far",
+            "voice": "",
+            "id": "line_26"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "玩家",
+                "25"
+            ],
+            "id": "line_27"
+        },
+        {
+            "type": "debate",
+            "debateConfig": {
+                "timeLimit": 30,
+                "sentences": [
+                    {
+                        "id": "s1",
+                        "text": "",
+                        "isWeakPoint": true,
+                        "correctEvidenceId": "TODO"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "opt1",
+                        "text": "Success",
+                        "isCorrect": true,
+                        "nextLineId": "line_64",
+                        "penalty": 0
+                    },
+                    {
+                        "id": "opt2",
+                        "text": "Fail",
+                        "isCorrect": false,
+                        "nextLineId": "line_69",
+                        "penalty": 500
+                    }
+                ]
+            },
+            "id": "line_28"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "right"
+            ],
+            "id": "remove_right_before_line_32"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "这你不该问我，典狱长不是在旁边吗？",
+            "portrait": "Player/主角2",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_32"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "（不好，这样下去对我很不利！）",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_36"
+        },
+        {
+            "type": "debate",
+            "debateConfig": {
+                "timeLimit": 30,
+                "sentences": [
+                    {
+                        "id": "s1",
+                        "text": "能证明你不是伪人的证据",
+                        "isWeakPoint": true,
+                        "correctEvidenceId": "TODO"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "opt1",
+                        "text": "Success",
+                        "isCorrect": true,
+                        "nextLineId": "line_39",
+                        "penalty": 0
+                    },
+                    {
+                        "id": "opt2",
+                        "text": "Fail",
+                        "isCorrect": false,
+                        "nextLineId": "line_42",
+                        "penalty": 500
+                    }
+                ]
+            },
+            "id": "line_38"
+        },
+        {
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "dive_merge_39"
+            ],
+            "id": "line_41"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "D",
+                "25"
+            ],
+            "id": "line_44"
+        },
+        {
+            "type": "debate",
+            "debateConfig": {
+                "timeLimit": 30,
+                "sentences": [
+                    {
+                        "id": "s1",
+                        "text": "",
+                        "isWeakPoint": true,
+                        "correctEvidenceId": "TODO"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "opt1",
+                        "text": "Success",
+                        "isCorrect": true,
+                        "nextLineId": "line_52",
+                        "penalty": 0
+                    },
+                    {
+                        "id": "opt2",
+                        "text": "Fail",
+                        "isCorrect": false,
+                        "nextLineId": "line_57",
+                        "penalty": 500
+                    }
+                ]
+            },
+            "id": "line_45"
+        },
+        {
+            "type": "command",
+            "command": "ShowChoice",
+            "parameters": [
+                "A|debate_A_50"
+            ],
+            "id": "line_50"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "A",
+                "25"
+            ],
+            "id": "line_55"
+        },
+        {
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "debate_merge_51"
+            ],
+            "id": "line_56"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "D",
+                "25"
+            ],
+            "id": "line_60"
+        },
+        {
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "debate_merge_51"
+            ],
+            "id": "line_61"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "我",
+            "text": "的确，人类确实没有这种能力，但是“伪人”可以",
+            "portrait": "Player/主角1",
+            "position": "left",
+            "distance": "far",
+            "voice": "",
+            "id": "line_63"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "B",
+                "25"
+            ],
+            "id": "line_67"
+        },
+        {
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "debate_merge_51"
+            ],
+            "id": "line_68"
+        },
+        {
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "玩家",
+                "25"
+            ],
+            "id": "line_72"
+        },
+        {
+            "type": "debate",
+            "debateConfig": {
+                "timeLimit": 30,
+                "sentences": [
+                    {
+                        "id": "s1",
+                        "text": "",
+                        "isWeakPoint": true,
+                        "correctEvidenceId": "TODO"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "opt1",
+                        "text": "Success",
+                        "isCorrect": true,
+                        "nextLineId": "dive_success_73",
+                        "penalty": 0
+                    },
+                    {
+                        "id": "opt2",
+                        "text": "Fail",
+                        "isCorrect": false,
+                        "nextLineId": "dive_fail_73",
+                        "penalty": 500
+                    }
+                ]
+            },
+            "id": "line_73"
+        },
+        {
+            "type": "command",
+            "command": "RemoveCharacter",
+            "parameters": [
+                "left"
+            ],
+            "id": "remove_left_before_line_75"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "典狱长",
+            "text": "审判的时钟已经敲响",
+            "portrait": "Warden/典狱长1",
+            "position": "center",
+            "distance": "far",
+            "voice": "",
+            "id": "line_75"
+        },
+        {
+            "type": "dialogue",
+            "speaker": "典狱长",
+            "text": "刽子手已就绪，该送行了。",
+            "portrait": "Warden/典狱长1",
+            "position": "center",
+            "distance": "far",
+            "voice": "",
+            "id": "line_76"
+        }
+    ]
+}
