@@ -143,6 +143,37 @@ public static class BackpackLayoutSetup
             detailDescription = detailDescTrans.GetComponent<Text>();
         }
 
+        // 详情描述中的附加图片容器
+        Transform detailImagesContentTrans = descArea.Find("DetailImagesContent");
+        RectTransform detailImagesContent;
+        if (detailImagesContentTrans == null)
+        {
+            var go = new GameObject("DetailImagesContent");
+            go.transform.SetParent(descArea, false);
+            var imgContentRt = go.AddComponent<RectTransform>();
+            imgContentRt.anchorMin = new Vector2(0, 0);
+            imgContentRt.anchorMax = new Vector2(1, 0);
+            imgContentRt.pivot = new Vector2(0.5f, 0);
+            imgContentRt.anchoredPosition = new Vector2(0, 50);
+            imgContentRt.sizeDelta = new Vector2(0, 100);
+            var hlg = go.AddComponent<HorizontalLayoutGroup>();
+            hlg.spacing = 8;
+            hlg.padding = new RectOffset(5, 5, 5, 5);
+            hlg.childAlignment = TextAnchor.MiddleLeft;
+            hlg.childControlWidth = false;
+            hlg.childControlHeight = false;
+            hlg.childForceExpandWidth = false;
+            hlg.childForceExpandHeight = false;
+            var csf = go.AddComponent<ContentSizeFitter>();
+            csf.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+            csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            detailImagesContent = imgContentRt;
+        }
+        else
+        {
+            detailImagesContent = detailImagesContentTrans as RectTransform;
+        }
+
         // 物品栏（底）ScrollView
         Transform itemListArea = rt.Find("ItemListArea");
         if (itemListArea == null)
@@ -234,6 +265,7 @@ public static class BackpackLayoutSetup
         so.FindProperty("detailImage").objectReferenceValue = detailImage;
         so.FindProperty("detailTitle").objectReferenceValue = detailTitle;
         so.FindProperty("detailDescription").objectReferenceValue = detailDescription;
+        so.FindProperty("detailImagesContent").objectReferenceValue = detailImagesContent;
         so.FindProperty("itemListContent").objectReferenceValue = content;
 
         var slotPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/BackpackItemSlot.prefab");

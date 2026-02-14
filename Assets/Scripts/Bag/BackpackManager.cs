@@ -2,6 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// Sprite 数组的序列化包装，用于 Inspector 中配置人物详情图片等。
+/// </summary>
+[System.Serializable]
+public class SpriteArray
+{
+    public Sprite[] sprites;
+}
+
+/// <summary>
 /// 背包系统：管理证物、证词、人物等信息的存储与按标签筛选。
 /// 关键信息与证词自动收录，出示证物时可自动打开背包。
 /// </summary>
@@ -16,6 +25,8 @@ public class BackpackManager : MonoBehaviour
     public string[] initialCharacterNames = new string[] { "人物一", "人物二", "人物三", "人物四" };
     [Tooltip("对应人物头像（Sprite），与上面 ID 一一对应；可不设或数量不足则无图")]
     public Sprite[] initialCharacterSprites;
+    [Tooltip("对应人物详情描述中的附加图片（每人的图片数组，数量不足则无图）")]
+    public SpriteArray[] initialCharacterDetailImages;
 
     private List<BackpackItem> allItems = new List<BackpackItem>();
     private HashSet<string> addedIds = new HashSet<string>();
@@ -47,7 +58,11 @@ public class BackpackManager : MonoBehaviour
                 ? initialCharacterNames[i] : ("人物" + (i + 1));
             Sprite portrait = (initialCharacterSprites != null && i < initialCharacterSprites.Length)
                 ? initialCharacterSprites[i] : null;
-            allItems.Add(new BackpackItem(cid, InfoCategory.Character, name, "（证词将记录在此）", portrait, cid));
+            Sprite[] detailImgs = (initialCharacterDetailImages != null && i < initialCharacterDetailImages.Length && initialCharacterDetailImages[i] != null)
+                ? initialCharacterDetailImages[i].sprites : null;
+            var item = new BackpackItem(cid, InfoCategory.Character, name, "（证词将记录在此）", portrait, cid);
+            item.detailImages = detailImgs;
+            allItems.Add(item);
         }
     }
 
@@ -132,4 +147,19 @@ public class BackpackManager : MonoBehaviour
 
     /// <summary>是否已包含某 id</summary>
     public bool HasItem(string id) => addedIds.Contains(id);
+
+    /// <summary>更新指定条目的详情描述图片（如人物详情中的附加图片）</summary>
+    public void UpdateItemDetailImages(string id, Sprite[] detailImages)
+    {
+        foreach (var item in allItems)
+        {
+            if (item.id == id)
+            {
+                item.detailImages = detailImages;
+                if (BackpackUI.Instance != null)
+                    BackpackUI.Instance.RefreshDisplay();
+                return;
+            }
+        }
+    }
 }

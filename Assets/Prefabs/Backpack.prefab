@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u7ED3\u8BBA"
+  m_Text: "\u89C4\u5219"
 --- !u!1 &104486884364460993
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +266,9 @@ MonoBehaviour:
   detailTitle: {fileID: 5134248724343363184}
   detailDescription: {fileID: 7217300591947189561}
   detailImage: {fileID: 3307427763091447669}
+  detailImagesContent: {fileID: 6570334333975759177}
   presentButton: {fileID: 6842132961653712091}
+  detailImageSlotSize: 80
 --- !u!1 &1713884649428987844
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +884,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 2005815042382097510}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -972,6 +974,83 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u51FA\u793A"
+--- !u!1 &5299832469948004971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6570334333975759177}
+  - component: {fileID: 3441568567313483857}
+  - component: {fileID: 1980869335877866445}
+  m_Layer: 0
+  m_Name: DetailImagesContent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6570334333975759177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299832469948004971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6.18708, y: 6.18708, z: 6.18708}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8106384437326856191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 41, y: 127}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &3441568567313483857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299832469948004971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 3
+  m_Spacing: 8
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &1980869335877866445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299832469948004971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1 &5333313016480328244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1081,7 @@ RectTransform:
   m_Children:
   - {fileID: 4423786997362119233}
   - {fileID: 6136771228517986984}
+  - {fileID: 6570334333975759177}
   m_Father: {fileID: 1818374439738465224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26, y: 0}
@@ -1065,7 +1145,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 624672867079243621}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1527,16 +1607,29 @@ MonoBehaviour:
   - char_2
   - char_3
   - char_4
+  - char_5
   initialCharacterNames:
   - "\u56DA\u72AFA"
   - "\u56DA\u72AFB"
   - "\u56DA\u72AFC"
+  - "\u56DA\u72AFD"
   - "\u5178\u72F1\u957F"
   initialCharacterSprites:
   - {fileID: 21300000, guid: fb5d6aa3c7bc056438037885fa0eef61, type: 3}
   - {fileID: 21300000, guid: 54f6651a5176a974dbf196c307195dbd, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: 3b69315578df4cd42b4b8649664f55a6, type: 3}
   - {fileID: 21300000, guid: 53c4d4325a23df144a617d14147d7b3e, type: 3}
+  initialCharacterDetailImages:
+  - sprites:
+    - {fileID: 21300000, guid: ac1be5d9c1854d84f8bcf7df5ffb7aaf, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: 2a1b7a3f36c58c4489fbe4dfdcec4a42, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: 0e944c85b4086b7459779aaa60b5b35c, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: 977c48bd16cfee849955021ea4ad0819, type: 3}
+  - sprites: []
 --- !u!1 &7214757621472015467
 GameObject:
   m_ObjectHideFlags: 0

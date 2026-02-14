@@ -78,13 +78,14 @@
 - **Initial Character Ids**：4 个人物的 ID，如 `char_1` ~ `char_4`。
 - **Initial Character Names**：4 个显示名，与上面一一对应。
 - **Initial Character Sprites**：4 个人物头像（Sprite），与上面 ID 一一对应；在 Inspector 中把头像图拖入数组对应元素即可，可不设或数量不足则该人物无图。
+- **Initial Character Detail Images**：4 个人物详情描述中的附加图片（SpriteArray 数组，每个元素是一组 Sprite）；可为每个人物配置多张图，显示在详情描述区域下方，可不设或数量不足则无图。
   开局会自动在「人物」标签下生成这 4 人；证词可通过 `AddTestimony(..., characterId)` 关联到对应人物。
 
 ### 3. BackpackUI 配置
 - **backpackPanel**：背包根节点（整个面板）。
 - **右侧标签**：tabCharacter / tabSuspicion / tabConclusion 三个 Button；可选 tabXxxLockHint 未解锁时显示的锁提示。
 - **列表**：itemListContent（ScrollView 的 Content）、itemSlotPrefab（推荐 `BackpackItemSlot.prefab`，含图片 Icon + 名称 Text）。
-- **详情**：detailPanel、detailTitle、detailDescription、detailImage。
+- **详情**：detailPanel、detailTitle、detailDescription、detailImage；可选 detailImagesContent（详情描述中的附加图片容器，不设则自动创建）。
 - **uiManager**：拖场景中的 UIManager，这样打开/关闭背包会走 PushUI/PopUI，与 ESC 主页一致。
 
 ### 4. 背包界面背景与退出按钮
@@ -114,6 +115,8 @@
   `BackpackManager.Instance.AddTestimony(id, title, description, characterId, image);`
 - 结论（意识流后）：  
   `BackpackManager.Instance.AddConclusion(id, title, description, image);`
+- 更新某条目的详情描述图片（如人物详情中的附加图片）：  
+  `BackpackManager.Instance.UpdateItemDetailImages(id, detailImages);`
 - 解锁「结论」标签（意识流结束后）：  
   `BackpackManager.Instance.UnlockConclusionCategory();`
 

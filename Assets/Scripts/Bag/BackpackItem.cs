@@ -22,6 +22,9 @@ public class BackpackItem
     /// <summary>特写图片（证物、关键信息图）</summary>
     public Sprite image;
 
+    /// <summary>详情描述中的附加图片（人物等可配置多张图，显示在描述区域下方）</summary>
+    public Sprite[] detailImages;
+
     /// <summary>若为人物类，可关联该人物下的证词列表（由 BackpackManager 按人物聚合）</summary>
     public string characterId;
 
