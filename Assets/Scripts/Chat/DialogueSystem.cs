@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
@@ -29,6 +30,7 @@ public class DialogueSystem : MonoBehaviour
     public static bool isInDialogue = false;
     public string dialogueID;
     public bool triggerOnlyOnce;
+    public bool loadMainSceneOnEnd = false; // 新增：对话结束后是否返回主界面
 
     public int currentLine = 0;
     public bool isTyping = false;
@@ -260,6 +262,20 @@ public class DialogueSystem : MonoBehaviour
         {
             onDialogueEndCallback.Invoke();
         }
+
+        // ⭐ 如果设置了结束后返回主界面
+        if (loadMainSceneOnEnd)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    /// <summary>
+    /// 外部接口：设置对话结束后是否返回主界面
+    /// </summary>
+    public void SetReturnToMainOnEnd(bool shouldReturn)
+    {
+        loadMainSceneOnEnd = shouldReturn;
     }
 
     void ShowChoices(DialogueChoice[] choices)

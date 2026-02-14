@@ -2,7 +2,15 @@
     "chapterId": "Act01_Chapter01_Trial",
     "lines": [
         {
-            "id": "line_1",
+            "id": "line_0_0",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "你们回到中央审讯室。",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_0_1",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "首先还原一下案发情况",
@@ -10,7 +18,7 @@
             "position": "center"
         },
         {
-            "id": "line_2",
+            "id": "line_0_2",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "死者囚犯C，被发现于早上6：50死于牢房中，死因为结果为死于心脏麻痹",
@@ -18,7 +26,7 @@
             "position": "center"
         },
         {
-            "id": "line_3",
+            "id": "cmd_AddEvidence_0",
             "type": "command",
             "command": "AddEvidence",
             "parameters": [
@@ -29,7 +37,7 @@
             ]
         },
         {
-            "id": "line_4",
+            "id": "line_0_3",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "验尸结果显示，C未遭受任何物理伤害，只有手和脸部混有不明纤维，尸体成一种奇怪的姿势死去",
@@ -37,7 +45,7 @@
             "position": "center"
         },
         {
-            "id": "line_5",
+            "id": "cmd_AddEvidence_1",
             "type": "command",
             "command": "AddEvidence",
             "parameters": [
@@ -48,7 +56,7 @@
             ]
         },
         {
-            "id": "line_6",
+            "id": "line_0_4",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "C囚有长期吸毒史，为了缓解戒断反应，每晚熄灯前都要注射药物",
@@ -56,7 +64,7 @@
             "position": "center"
         },
         {
-            "id": "line_7",
+            "id": "cmd_AddEvidence_2",
             "type": "command",
             "command": "AddEvidence",
             "parameters": [
@@ -67,7 +75,7 @@
             ]
         },
         {
-            "id": "line_8",
+            "id": "line_0_5",
             "type": "dialogue",
             "speaker": "D",
             "text": "（死因是心脏麻痹还有长期吸毒史吗......）",
@@ -75,7 +83,7 @@
             "position": "left"
         },
         {
-            "id": "line_9",
+            "id": "line_0_6",
             "type": "dialogue",
             "speaker": "A",
             "text": "要我说答案已经很明显了把，嗑药把自己嗑死了呗",
@@ -83,7 +91,7 @@
             "position": "right"
         },
         {
-            "id": "line_10",
+            "id": "line_0_7",
             "type": "dialogue",
             "speaker": "B",
             "text": "那死者的姿态该怎么解释？",
@@ -91,7 +99,7 @@
             "position": "right"
         },
         {
-            "id": "line_11",
+            "id": "line_0_8",
             "type": "dialogue",
             "speaker": "A",
             "text": "问老子干嘛？我随口说说而已",
@@ -99,7 +107,7 @@
             "position": "right"
         },
         {
-            "id": "line_12",
+            "id": "line_0_9",
             "type": "dialogue",
             "speaker": "D",
             "text": "（这样不行，得有一个讨论点）",
@@ -107,7 +115,15 @@
             "position": "left"
         },
         {
-            "id": "line_13",
+            "id": "line_0_10",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "我得打断他们剑拔弩张的氛围",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_0_11",
             "type": "dialogue",
             "speaker": "D",
             "text": " 大家昨晚门禁前都在干什么？",
@@ -115,7 +131,7 @@
             "position": "left"
         },
         {
-            "id": "line_14",
+            "id": "line_0_12",
             "type": "dialogue",
             "speaker": "A",
             "text": "昨晚我喝醉了记得不是很清楚...回房间的那会儿倒是撞见过C",
@@ -123,7 +139,7 @@
             "position": "right"
         },
         {
-            "id": "line_15",
+            "id": "cmd_AddEvidence_3",
             "type": "command",
             "command": "AddEvidence",
             "parameters": [
@@ -134,7 +150,7 @@
             ]
         },
         {
-            "id": "line_16",
+            "id": "line_0_13",
             "type": "dialogue",
             "speaker": "B",
             "text": "我就一直在看书",
@@ -142,7 +158,7 @@
             "position": "right"
         },
         {
-            "id": "line_17",
+            "id": "line_0_14",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "确保门禁前没有囚犯在外面，我就回了办公室。没有看过C",
@@ -150,16 +166,16 @@
             "position": "center"
         },
         {
-            "id": "line_18",
+            "id": "cmd_ShowChoice_0",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "我昨天...来过这里但不记得干了什么|line_19",
-                "（说谎）我昨晚回房间后一直待在房间里没见过C|line_24"
+                "我昨天...来过这里但不记得干了什么|line_0_15",
+                "（说谎）我昨晚回房间后一直待在房间里没见过C|line_0_19"
             ]
         },
         {
-            "id": "line_19",
+            "id": "line_0_15",
             "type": "dialogue",
             "speaker": "D",
             "text": "我昨天...来过这里但不记得干了什么",
@@ -167,7 +183,7 @@
             "position": "left"
         },
         {
-            "id": "line_20",
+            "id": "line_0_16",
             "type": "dialogue",
             "speaker": "A",
             "text": "哈？开什么玩笑！你就是凶手吧",
@@ -175,7 +191,7 @@
             "position": "right"
         },
         {
-            "id": "line_21",
+            "id": "line_0_17",
             "type": "dialogue",
             "speaker": "B",
             "text": "我佩服你的勇气 我不得不怀疑你的动机",
@@ -183,7 +199,7 @@
             "position": "right"
         },
         {
-            "id": "line_22",
+            "id": "line_0_18",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "......",
@@ -191,19 +207,24 @@
             "position": "center"
         },
         {
-            "id": "line_23",
+            "id": "cmd_AddSuspicion_0",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_23_jump",
+            "id": "cmd_Jump_0",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_0_37"
+            ]
         },
         {
-            "id": "line_24",
+            "id": "line_0_19",
             "type": "dialogue",
             "speaker": "D",
             "text": "（说谎）我昨晚回房间后一直待在房间里没见过C",
@@ -211,7 +232,7 @@
             "position": "left"
         },
         {
-            "id": "line_25",
+            "id": "line_0_20",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "看来我们当中有人在说谎",
@@ -219,17 +240,17 @@
             "position": "center"
         },
         {
-            "id": "line_26",
+            "id": "cmd_ShowChoice_1",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "A|branch_a_start",
-                "B|branch_b_start",
-                "典狱长|branch_w_start"
+                "A|line_0_21",
+                "B|line_0_28",
+                "典狱长|line_0_31"
             ]
         },
         {
-            "id": "branch_a_start",
+            "id": "line_0_21",
             "type": "dialogue",
             "speaker": "D",
             "text": "你在隐瞒什么，A？",
@@ -237,7 +258,7 @@
             "position": "left"
         },
         {
-            "id": "line_27",
+            "id": "line_0_22",
             "type": "dialogue",
             "speaker": "A",
             "text": "哈！！？？",
@@ -245,7 +266,17 @@
             "position": "right"
         },
         {
-            "id": "line_28",
+            "id": "cmd_RequireEvidence_0",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "C的病史与治疗",
+                "line_0_23",
+                "line_0_26"
+            ]
+        },
+        {
+            "id": "line_0_23",
             "type": "dialogue",
             "speaker": "D",
             "text": "你回牢房那会儿C按道理正在注射药物怎么可能被你撞见？",
@@ -253,15 +284,15 @@
             "position": "left"
         },
         {
-            "id": "line_29",
+            "id": "line_0_24",
             "type": "dialogue",
             "speaker": "A",
-            "text": "这...该死！见鬼难道",
+            "text": "这...该死！见鬼了难道",
             "portrait": "A/老囚1",
             "position": "right"
         },
         {
-            "id": "line_30",
+            "id": "line_0_25",
             "type": "dialogue",
             "speaker": "B",
             "text": "呵呵，无稽之谈",
@@ -269,19 +300,57 @@
             "position": "right"
         },
         {
-            "id": "line_31",
+            "id": "cmd_AddSuspicion_1",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["A", "25"]
+            "parameters": [
+                "A",
+                "25"
+            ]
         },
         {
-            "id": "line_32_jump_a",
+            "id": "cmd_Jump_1",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_0_37"
+            ]
         },
         {
-            "id": "branch_b_start",
+            "id": "line_0_26",
+            "type": "dialogue",
+            "speaker": "A",
+            "text": "你在叽里咕噜说些什么？",
+            "portrait": "A/老囚2",
+            "position": "right"
+        },
+        {
+            "id": "line_0_27",
+            "type": "dialogue",
+            "speaker": "B",
+            "text": "组织好语音再来发言把，这对大家都好",
+            "portrait": "B/盗窃犯",
+            "position": "right"
+        },
+        {
+            "id": "cmd_AddSuspicion_2",
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "D",
+                "25"
+            ]
+        },
+        {
+            "id": "cmd_Jump_2",
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "line_0_37"
+            ]
+        },
+        {
+            "id": "line_0_28",
             "type": "dialogue",
             "speaker": "D",
             "text": "很明显B，你才是最可疑的那个",
@@ -289,7 +358,7 @@
             "position": "left"
         },
         {
-            "id": "line_33",
+            "id": "line_0_29",
             "type": "dialogue",
             "speaker": "B",
             "text": "很遗憾，你的结论漏洞百出我想也没必要聊下去了",
@@ -297,7 +366,7 @@
             "position": "right"
         },
         {
-            "id": "line_34",
+            "id": "line_0_30",
             "type": "dialogue",
             "speaker": "D",
             "text": "（啧，冷静下来不要急躁！）",
@@ -305,19 +374,24 @@
             "position": "left"
         },
         {
-            "id": "line_35",
+            "id": "cmd_AddSuspicion_3",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_36_jump_b",
+            "id": "cmd_Jump_3",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_0_37"
+            ]
         },
         {
-            "id": "branch_w_start",
+            "id": "line_0_31",
             "type": "dialogue",
             "speaker": "D",
             "text": "典狱长，有一点你明显说得不对吧",
@@ -325,7 +399,17 @@
             "position": "left"
         },
         {
-            "id": "line_37",
+            "id": "cmd_RequireEvidence_1",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "反向的锁",
+                "line_0_32",
+                "line_0_36"
+            ]
+        },
+        {
+            "id": "line_0_32",
             "type": "dialogue",
             "speaker": "D",
             "text": "通过锁上的痕迹就能知道，“那个”家伙可没乖乖呆在牢里，你的话语经不起推敲",
@@ -333,7 +417,7 @@
             "position": "left"
         },
         {
-            "id": "line_38",
+            "id": "line_0_33",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "...你说的没错，但这是因为伪人很有可能改变身体形状逃了出去",
@@ -341,7 +425,7 @@
             "position": "center"
         },
         {
-            "id": "line_39",
+            "id": "line_0_34",
             "type": "dialogue",
             "speaker": "B",
             "text": "可你却对这种可能不闻不问",
@@ -349,7 +433,7 @@
             "position": "right"
         },
         {
-            "id": "line_40",
+            "id": "line_0_35",
             "type": "dialogue",
             "speaker": "A",
             "text": "你这家伙是同伙把？",
@@ -357,19 +441,57 @@
             "position": "right"
         },
         {
-            "id": "line_41",
+            "id": "cmd_AddSuspicion_4",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["典狱长", "25"]
+            "parameters": [
+                "典狱长",
+                "25"
+            ]
         },
         {
-            "id": "line_42_jump_w",
+            "id": "cmd_Jump_4",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_0_37"
+            ]
         },
         {
-            "id": "trial_end",
+            "id": "line_0_36",
+            "type": "dialogue",
+            "speaker": "典狱长",
+            "text": "你有权保持沉默，但是你所说的每句话将成为呈堂证供",
+            "portrait": "Warden/典狱长2",
+            "position": "center"
+        },
+        {
+            "id": "cmd_AddSuspicion_5",
+            "type": "command",
+            "command": "AddSuspicion",
+            "parameters": [
+                "D",
+                "25"
+            ]
+        },
+        {
+            "id": "cmd_Jump_5",
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "line_0_37"
+            ]
+        },
+        {
+            "id": "line_0_37",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "进入投票阶段，会场陷入死一样的寂静",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_0_38",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "记录完成，下一轮。",
@@ -377,7 +499,7 @@
             "position": "center"
         },
         {
-            "id": "line_44",
+            "id": "cmd_LoadScene_0",
             "type": "command",
             "command": "LoadScene"
         }

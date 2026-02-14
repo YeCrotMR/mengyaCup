@@ -648,9 +648,18 @@ namespace DebateSystem
                                 {
                                     var items = BackpackManager.Instance.GetAllItems();
                                     var item = items.Find(x => x.id == selectedId);
-                                    if (item != null && item.title == correctId)
+                                    if (item != null)
                                     {
-                                        isCorrect = true;
+                                        Debug.Log($"[Treatment] 验证证物: ID={item.id}, Title='{item.title}', CorrectId='{correctId}'");
+                                        // 增加 Trim() 去除可能的首尾空格
+                                        if (item.title.Trim() == correctId.Trim())
+                                        {
+                                            isCorrect = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Debug.LogWarning($"[Treatment] 未在背包中找到 ID 为 {selectedId} 的物品。");
                                     }
                                 }
 
@@ -721,6 +730,52 @@ namespace DebateSystem
                         }
                     }
                     break;
+
+                case "LoadEndScene":
+                    if (GameManager.Instance)
+                    {
+                        int scoreA = GameManager.Instance.GetSuspicion("A");
+                        int scoreB = GameManager.Instance.GetSuspicion("B");
+                        int scoreD = GameManager.Instance.GetSuspicion("D");
+                        int scoreWarden = GameManager.Instance.GetSuspicion("典狱长");
+
+                        Debug.Log($"[Treatment] 结算嫌疑度 - A:{scoreA}, B:{scoreB}, D:{scoreD}, 典狱长:{scoreWarden}");
+
+                        string targetScene = "End_1"; // 默认结局 A
+                        int maxScore = scoreA;
+
+                        if (scoreB > maxScore)
+                        {
+                            maxScore = scoreB;
+                            targetScene = "End_2";
+                        }
+                        if (scoreD > maxScore)
+                        {
+                            maxScore = scoreD;
+                            targetScene = "End_3";
+                        }
+                        if (scoreWarden > maxScore)
+                        {
+                            maxScore = scoreWarden;
+                            targetScene = "End_4";
+                        }
+
+                        Debug.Log($"[Treatment] 最高嫌疑度为 {maxScore}，加载结局场景: {targetScene}");
+                        
+                        if (UnityEngine.SceneManagement.SceneUtility.GetBuildIndexByScenePath(targetScene) != -1)
+                        {
+                            UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
+                        }
+                        else
+                        {
+                            Debug.LogError($"[Treatment] 无法加载结局场景 '{targetScene}'，请检查 Build Settings 是否包含该场景。");
+                        }
+                    }
+                    else
+                    {
+                         Debug.LogError("[Treatment] LoadEndScene 失败: 找不到 GameManager 实例");
+                    }
+                    return; // 停止后续执行
 
                 default:
                     Debug.LogWarning($"未知指令: {line.command}");

@@ -2,7 +2,31 @@
     "chapterId": "Act01_Chapter04_Trial",
     "lines": [
         {
-            "id": "line_2",
+            "id": "line_3_0",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "你们回到中央审讯室。",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_3_1",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "你感觉周围的恶意不断袭来",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_3_2",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "率先发难的是A",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_3_3",
             "type": "dialogue",
             "speaker": "A",
             "text": "很可疑啊，看不懂的档案加上没有一点蛛丝马迹的房间",
@@ -10,7 +34,7 @@
             "position": "right"
         },
         {
-            "id": "line_3",
+            "id": "line_3_4",
             "type": "dialogue",
             "speaker": "B",
             "text": "唯一的线索还是与C息息相关宗教项链，我只能认为房间是你精心布置后的样子",
@@ -18,7 +42,7 @@
             "position": "right"
         },
         {
-            "id": "line_4",
+            "id": "line_3_5",
             "type": "dialogue",
             "speaker": "A",
             "text": "说起来之前都是你在指认啊。不知不觉陷入你的话术里去了",
@@ -26,7 +50,7 @@
             "position": "right"
         },
         {
-            "id": "line_5",
+            "id": "line_3_6",
             "type": "dialogue",
             "speaker": "B",
             "text": "的确，太多疑点集合在你身上了，后续言语如有冒犯，还请海涵",
@@ -34,7 +58,7 @@
             "position": "right"
         },
         {
-            "id": "line_6",
+            "id": "line_3_7",
             "type": "dialogue",
             "speaker": "D",
             "text": "（啧，这下麻烦了）",
@@ -42,7 +66,7 @@
             "position": "left"
         },
         {
-            "id": "line_7",
+            "id": "line_3_8",
             "type": "dialogue",
             "speaker": "B",
             "text": "首先请回答，为什么会有十字架项链出现在你的房间里",
@@ -50,17 +74,33 @@
             "position": "right"
         },
         {
-            "id": "line_8",
+            "id": "line_3_9",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "（糟了，我现在记忆本来就很混乱，这种情况也没有好的借口）\n（与C相关的宗教物品...每个人的房间都有，或许可以利用这一点）",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_3_10",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "能证明十字架与玩家无关的线索是",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_0",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "十字架",
-                "line_9",
-                "line_13"
+                "黑皮书",
+                "line_3_11",
+                "line_3_16"
             ]
         },
         {
-            "id": "line_9",
+            "id": "line_3_11",
             "type": "dialogue",
             "speaker": "D",
             "text": "还解释什么？这根本就不是我的东西",
@@ -68,15 +108,23 @@
             "position": "left"
         },
         {
-            "id": "line_10",
+            "id": "line_3_12",
+            "type": "dialogue",
+            "speaker": "B",
+            "text": "....？？",
+            "portrait": "B/盗窃犯",
+            "position": "right"
+        },
+        {
+            "id": "line_3_13",
             "type": "dialogue",
             "speaker": "D",
-            "text": "那你们能解释出你们牢房里的十字架物品吗？\n只能说是C给我们每人都交换了宗教内物件，身为传教士来说很合理把，况且我也是基督教信徒",
+            "text": "我和你一样，与C交换。你得到了黑皮书，我得到了项链。\n（说谎）但是不是昨天，因为我也是基督教信徒",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_11",
+            "id": "line_3_14",
             "type": "dialogue",
             "speaker": "A",
             "text": "哈？你什么时候又成基督信徒了？",
@@ -84,21 +132,23 @@
             "position": "right"
         },
         {
-            "id": "line_12",
+            "id": "line_3_15",
             "type": "dialogue",
             "speaker": "D",
-            "text": "我一直都是啊？不然你以为我怎么进来的？",
+            "text": "（说谎）我一直都是啊？不然你以为我怎么进来的？",
             "portrait": "Player/主角2",
             "position": "left"
         },
         {
-            "id": "line_12_jump",
+            "id": "cmd_Jump_0",
             "type": "command",
             "command": "Jump",
-            "parameters": ["line_15"]
+            "parameters": [
+                "line_3_18"
+            ]
         },
         {
-            "id": "line_13",
+            "id": "line_3_16",
             "type": "dialogue",
             "speaker": "D",
             "text": "这个理由能说服你们吗",
@@ -106,7 +156,7 @@
             "position": "left"
         },
         {
-            "id": "line_14",
+            "id": "line_3_17",
             "type": "dialogue",
             "speaker": "A",
             "text": "你觉得呢？",
@@ -114,13 +164,16 @@
             "position": "right"
         },
         {
-            "id": "line_14_sus",
+            "id": "cmd_AddSuspicion_0",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_15",
+            "id": "line_3_18",
             "type": "dialogue",
             "speaker": "A",
             "text": "那..那档案怎么解释，为什么就你一个人的档案是乱码",
@@ -128,7 +181,7 @@
             "position": "right"
         },
         {
-            "id": "line_16",
+            "id": "line_3_19",
             "type": "dialogue",
             "speaker": "D",
             "text": "（看来只有我才能看见，该怎么才能蒙混过关？）",
@@ -136,7 +189,7 @@
             "position": "left"
         },
         {
-            "id": "line_17",
+            "id": "line_3_20",
             "type": "dialogue",
             "speaker": "D",
             "text": "这你不该问我，典狱长不是在旁边吗？",
@@ -144,7 +197,7 @@
             "position": "left"
         },
         {
-            "id": "line_18",
+            "id": "line_3_21",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "这点我也无法解释，档案不是我写的",
@@ -152,7 +205,7 @@
             "position": "center"
         },
         {
-            "id": "line_19",
+            "id": "line_3_22",
             "type": "dialogue",
             "speaker": "B",
             "text": "伪人拥有改变其他人认知的能力，如果你是伪人的话就都说得通了",
@@ -160,7 +213,7 @@
             "position": "right"
         },
         {
-            "id": "line_20",
+            "id": "line_3_23",
             "type": "dialogue",
             "speaker": "D",
             "text": "（不好，这样下去对我很不利！）",
@@ -168,7 +221,7 @@
             "position": "left"
         },
         {
-            "id": "line_21",
+            "id": "line_3_24",
             "type": "dialogue",
             "speaker": "A",
             "text": "果然就是你把，赶紧投票了！",
@@ -176,25 +229,41 @@
             "position": "right"
         },
         {
-            "id": "line_22",
-            "type": "command",
-            "command": "RequireEvidence",
-            "parameters": [
-                "A",
-                "line_23",
-                "line_26"
-            ]
-        },
-        {
-            "id": "line_23",
+            "id": "line_3_25",
             "type": "dialogue",
             "speaker": "D",
-            "text": "诸位，我们还记得伪人的特性吗？伪人无法抑制杀人的冲动，假如我真是伪人，某人现在恐怕不会站在这里吧",
+            "text": "（等等，昨天好像与A打过架，也许可以利用这一点）",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_24",
+            "id": "line_3_26",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "能证明你不是伪人的证据",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_1",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "伪人无法抑制杀人冲动",
+                "line_3_27",
+                "line_3_29"
+            ]
+        },
+        {
+            "id": "line_3_27",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "诸位，我们还记得伪人的特性吗？伪人无法抑制杀人的冲动，假如我真是伪人，某人现在恐怕昨天就被我杀掉了把？\n你看向A",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_3_28",
             "type": "dialogue",
             "speaker": "A",
             "text": "......呜",
@@ -202,13 +271,15 @@
             "position": "right"
         },
         {
-            "id": "line_25",
+            "id": "cmd_Jump_1",
             "type": "command",
             "command": "Jump",
-            "parameters": ["line_28"]
+            "parameters": [
+                "line_3_31"
+            ]
         },
         {
-            "id": "line_26",
+            "id": "line_3_29",
             "type": "dialogue",
             "speaker": "D",
             "text": "等等，这些足够证明我的清白",
@@ -216,7 +287,7 @@
             "position": "left"
         },
         {
-            "id": "line_27",
+            "id": "line_3_30",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "不，反而成了你在胡编乱造的依据",
@@ -224,13 +295,16 @@
             "position": "center"
         },
         {
-            "id": "line_27_sus",
+            "id": "cmd_AddSuspicion_1",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_28",
+            "id": "line_3_31",
             "type": "dialogue",
             "speaker": "D",
             "text": "的确如果你真的是伪人，A是不可能打得过你的",
@@ -238,7 +312,7 @@
             "position": "left"
         },
         {
-            "id": "line_29",
+            "id": "line_3_32",
             "type": "dialogue",
             "speaker": "D",
             "text": "刚刚的对话，反而在我的脑海中拼凑出了整个案发过程，让我们继续讨论吧！在到达真理前无法回头",
@@ -246,7 +320,7 @@
             "position": "left"
         },
         {
-            "id": "line_30",
+            "id": "line_3_33",
             "type": "dialogue",
             "speaker": "D",
             "text": "我先来还原一下案发过程把\nC离开B房后，像往常一样回房间注射药物，在这期间被伪人杀害",
@@ -254,7 +328,7 @@
             "position": "left"
         },
         {
-            "id": "line_31",
+            "id": "line_3_34",
             "type": "dialogue",
             "speaker": "A",
             "text": "我与他无冤无仇，不可能冒险去做这种事",
@@ -262,7 +336,7 @@
             "position": "right"
         },
         {
-            "id": "line_32",
+            "id": "line_3_35",
             "type": "dialogue",
             "speaker": "B",
             "text": "的确，除非有死亡笔记，不然很难做到在没有外伤的情况下杀了C",
@@ -270,7 +344,7 @@
             "position": "right"
         },
         {
-            "id": "line_33",
+            "id": "line_3_36",
             "type": "dialogue",
             "speaker": "D",
             "text": "我看未必",
@@ -278,16 +352,16 @@
             "position": "left"
         },
         {
-            "id": "line_34",
+            "id": "cmd_ShowChoice_0",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "A|branch_a_start",
-                "B|branch_b_start"
+                "A|line_3_34",
+                "B|line_3_42"
             ]
         },
         {
-            "id": "branch_a_start",
+            "id": "line_3_37",
             "type": "dialogue",
             "speaker": "D",
             "text": "你真的干不出来吗？",
@@ -295,7 +369,7 @@
             "position": "left"
         },
         {
-            "id": "line_35",
+            "id": "line_3_38",
             "type": "dialogue",
             "speaker": "A",
             "text": "不可能，绝对不可能！我没有杀他的动机",
@@ -303,17 +377,25 @@
             "position": "right"
         },
         {
-            "id": "line_36",
+            "id": "line_3_39",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "A的动机是",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_2",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "酒瓶",
-                "branch_a_success",
-                "branch_a_fail"
+                "没有喝过的酒",
+                "line_3_40",
+                "line_3_42"
             ]
         },
         {
-            "id": "branch_a_success",
+            "id": "line_3_40",
             "type": "dialogue",
             "speaker": "D",
             "text": "不，你的动机很纯粹，而且证物就放在你的房间里不是吗\nC先在B房传教，回房间时被喝醉了的你遇到，并与你约定——用卷轴换酒。可C食言了，这就是你的动机",
@@ -321,7 +403,7 @@
             "position": "left"
         },
         {
-            "id": "line_37",
+            "id": "line_3_41",
             "type": "dialogue",
             "speaker": "A",
             "text": "什么！！？",
@@ -329,19 +411,24 @@
             "position": "right"
         },
         {
-            "id": "line_38",
+            "id": "cmd_AddSuspicion_2",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["A", "25"]
+            "parameters": [
+                "A",
+                "25"
+            ]
         },
         {
-            "id": "line_39_jump",
+            "id": "cmd_Jump_2",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_3_59"
+            ]
         },
         {
-            "id": "branch_a_fail",
+            "id": "line_3_42",
             "type": "dialogue",
             "speaker": "D",
             "text": "这就是你去C房间的动机",
@@ -349,7 +436,7 @@
             "position": "left"
         },
         {
-            "id": "line_40",
+            "id": "line_3_43",
             "type": "dialogue",
             "speaker": "B",
             "text": "没看出来那处是动机",
@@ -357,7 +444,7 @@
             "position": "right"
         },
         {
-            "id": "line_41",
+            "id": "line_3_44",
             "type": "dialogue",
             "speaker": "A",
             "text": "耍我呢！",
@@ -365,73 +452,149 @@
             "position": "right"
         },
         {
-            "id": "line_42",
+            "id": "cmd_AddSuspicion_3",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
-        },
-        {
-            "id": "line_43",
-            "type": "command",
-            "command": "Jump",
-            "parameters": ["trial_end"]
-        },
-        {
-            "id": "branch_b_start",
-            "type": "dialogue",
-            "speaker": "D",
-            "text": "的确，人类确实没有这种能力，但是“伪人”可以\nC是在看见了某种东西后导致的心脏麻痹",
-            "portrait": "Player/主角1",
-            "position": "left"
-        },
-        {
-            "id": "line_44",
-            "type": "command",
-            "command": "RequireEvidence",
             "parameters": [
-                "黑皮书",
-                "branch_b_success",
-                "branch_b_fail"
+                "D",
+                "25"
             ]
         },
         {
-            "id": "branch_b_success",
+            "id": "cmd_Jump_3",
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "line_3_59"
+            ]
+        },
+        {
+            "id": "line_3_45",
             "type": "dialogue",
             "speaker": "D",
-            "text": "狂热的教徒终于见到了真主，但是虚伪的假象摧毁了神父的信仰",
+            "text": "不，根本就不需要造成外伤，C是看见真主后激动致死",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_45",
+            "id": "line_3_46",
             "type": "dialogue",
-            "speaker": "典狱长",
-            "text": "你是说C是因为过于激动导致病发",
-            "portrait": "Warden/典狱长1",
-            "position": "center"
+            "speaker": "B",
+            "text": "什么！？",
+            "portrait": "B/盗窃犯",
+            "position": "right"
         },
         {
-            "id": "line_46",
+            "id": "line_3_47",
             "type": "dialogue",
             "speaker": "D",
-            "text": "正是，但我们之中见过真主画像的，只有你B\n只有你昨天可能看来黑皮书！",
+            "text": "能证明激动致死的是",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_3",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "C的死亡姿势",
+                "line_3_48",
+                "line_3_56"
+            ]
+        },
+        {
+            "id": "line_3_48",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "C是看见真主后，激动致死",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_3_49",
+            "type": "dialogue",
+            "speaker": "B",
+            "text": "搞笑呢？你是说我们当中有天使？",
+            "portrait": "B/盗窃犯",
+            "position": "right"
+        },
+        {
+            "id": "line_3_50",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "谁说要是真的了？模仿外貌就可以了",
             "portrait": "Player/主角2",
             "position": "left"
         },
         {
-            "id": "line_47",
+            "id": "line_3_51",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "有人能改变外貌的证据是",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_4",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "伪人能改变身体构造",
+                "line_3_52",
+                "line_3_56"
+            ]
+        },
+        {
+            "id": "line_3_52",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "刚好伪人不就可以改变相貌吗？\n但我们之中昨天见过真主画像的，只有你B",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_3_53",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "只有你昨天看了黑皮书！",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_3_54",
+            "type": "dialogue",
+            "speaker": "B",
+            "text": "有趣的思路，我认同凶手的作案手法，但我不是伪人，更不会变成天使。",
+            "portrait": "B/盗窃犯2",
+            "position": "right"
+        },
+        {
+            "id": "line_3_55",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "谁信你的鬼话！",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_AddSuspicion_4",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["B", "25"]
+            "parameters": [
+                "B",
+                "25"
+            ]
         },
         {
-            "id": "line_48",
+            "id": "cmd_Jump_4",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_3_59"
+            ]
         },
         {
-            "id": "branch_b_fail",
+            "id": "line_3_56",
             "type": "dialogue",
             "speaker": "D",
             "text": "没错就是看见了这些",
@@ -439,7 +602,7 @@
             "position": "left"
         },
         {
-            "id": "line_49",
+            "id": "line_3_57",
             "type": "dialogue",
             "speaker": "B",
             "text": "哼哼哼...哈哈哈哈哈哈\n抱歉失态了，我真是高估你了，没想到为了洗脱嫌疑什么都能编得出来",
@@ -447,7 +610,7 @@
             "position": "right"
         },
         {
-            "id": "line_50",
+            "id": "line_3_58",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "够了，不要再胡搅蛮缠",
@@ -455,19 +618,24 @@
             "position": "center"
         },
         {
-            "id": "line_51",
+            "id": "cmd_AddSuspicion_5",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_52",
+            "id": "cmd_Jump_5",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_3_59"
+            ]
         },
         {
-            "id": "trial_end",
+            "id": "line_3_59",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "审判的时钟已经敲响\n刽子手已就绪，该送行了。",
@@ -475,9 +643,9 @@
             "position": "center"
         },
         {
-            "id": "line_54_load",
+            "id": "cmd_LoadEndScene_0",
             "type": "command",
-            "command": "LoadScene"
+            "command": "LoadEndScene"
         }
     ]
 }

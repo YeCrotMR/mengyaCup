@@ -276,10 +276,15 @@ public class BackpackUI : MonoBehaviour
         if (currentSelectedItem != null && onEvidenceSelected != null)
         {
             string id = currentSelectedItem.id;
+            
+            // 缓存回调，因为 CloseBackpack 会清空 onEvidenceSelected
+            var callback = onEvidenceSelected;
+            
             // 先关闭背包
             CloseBackpack();
+            
             // 再触发回调
-            onEvidenceSelected.Invoke(id);
+            callback.Invoke(id);
         }
     }
 }

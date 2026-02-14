@@ -61,8 +61,8 @@ public class MainMenuController : MonoBehaviour
     {
         // 当前使用文字版本，隐藏图片组件
         if (startGameImage != null) startGameImage.enabled = true;
-        if (loadGameImage != null) loadGameImage.enabled = false;
-        if (settingsImage != null) settingsImage.enabled = false;
+        if (loadGameImage != null) loadGameImage.enabled = true;
+        if (settingsImage != null) settingsImage.enabled = true;
         if (quitGameImage != null) quitGameImage.enabled = true;
 
         // 确保文字组件启用

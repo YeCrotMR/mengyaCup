@@ -2,7 +2,15 @@
     "chapterId": "Act01_Chapter03_Trial",
     "lines": [
         {
-            "id": "line_2",
+            "id": "line_2_0",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "这次大家的矛头都指向了B",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_2_1",
             "type": "dialogue",
             "speaker": "A",
             "text": "这房间里的东西也太可疑了，要我说你就是凶手把",
@@ -10,7 +18,7 @@
             "position": "right"
         },
         {
-            "id": "line_3",
+            "id": "line_2_2",
             "type": "dialogue",
             "speaker": "B",
             "text": "我之前是设计师，对精巧的东西有浓郁的兴趣，总不能因为这点就断定我是凶手把",
@@ -18,7 +26,7 @@
             "position": "right"
         },
         {
-            "id": "line_4",
+            "id": "line_2_3",
             "type": "dialogue",
             "speaker": "A",
             "text": "即使这么说可所有不利的证据还是指向你，光这点你就很难洗脱嫌疑",
@@ -26,7 +34,7 @@
             "position": "right"
         },
         {
-            "id": "line_5",
+            "id": "line_2_4",
             "type": "dialogue",
             "speaker": "B",
             "text": "哦？可我觉得酗酒伤人在动机上更合理哦",
@@ -34,7 +42,7 @@
             "position": "right"
         },
         {
-            "id": "line_6",
+            "id": "line_2_5",
             "type": "dialogue",
             "speaker": "D",
             "text": "动机...的确作案需要动机，大家昨天跟C在一块儿时干了什么？",
@@ -42,7 +50,7 @@
             "position": "left"
         },
         {
-            "id": "line_7",
+            "id": "line_2_6",
             "type": "dialogue",
             "speaker": "A",
             "text": "撕...我记得他是说要送我一瓶酒来着？但最后好像不了了之了。",
@@ -50,7 +58,7 @@
             "position": "right"
         },
         {
-            "id": "line_8",
+            "id": "line_2_7",
             "type": "dialogue",
             "speaker": "B",
             "text": "晚上C与往常一样来我房间里向我传教，我对他的教义不感兴趣，他自己说完就走了",
@@ -58,7 +66,7 @@
             "position": "right"
         },
         {
-            "id": "line_9",
+            "id": "line_2_8",
             "type": "dialogue",
             "speaker": "D",
             "text": "（说谎）我在白天倒是见过他，口里神神叨叨的晚上喝醉后就不得而知了。",
@@ -66,7 +74,7 @@
             "position": "left"
         },
         {
-            "id": "line_10",
+            "id": "line_2_9",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "总感觉有些话语与之前自相矛盾...",
@@ -74,42 +82,42 @@
             "position": "center"
         },
         {
-            "id": "line_11",
+            "id": "cmd_ShowChoice_0",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "A|branch_a_start",
-                "B|branch_b_start"
+                "A|line_2_10",
+                "B|line_2_21"
             ]
         },
         {
-            "id": "branch_a_start",
+            "id": "line_2_10",
             "type": "dialogue",
             "speaker": "D",
-            "text": "天下没有免费的午餐，你还说不了了之？不不不，证据就是：",
+            "text": "不了了之？不不不，证据就是：",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_12",
+            "id": "cmd_RequireEvidence_0",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "酒瓶",
-                "branch_a_success",
-                "branch_a_fail"
+                "没喝过的酒",
+                "line_2_11",
+                "line_2_18"
             ]
         },
         {
-            "id": "branch_a_success",
+            "id": "line_2_11",
             "type": "dialogue",
             "speaker": "D",
-            "text": "就是你房间里的那瓶酒，况且也不是白送的把，我不信一个酒鬼还有收集卷轴的习惯",
+            "text": "就是你房间里的那瓶酒，C没有说谎的的确确给你了",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_13",
+            "id": "line_2_12",
             "type": "dialogue",
             "speaker": "A",
             "text": "可这...又说明什么呢？我咬死是我不记得了你又怎么办？",
@@ -117,23 +125,41 @@
             "position": "right"
         },
         {
-            "id": "line_14",
+            "id": "line_2_13",
             "type": "dialogue",
             "speaker": "B",
-            "text": "愚蠢，都到了这一地步了还敢装傻充楞吗",
+            "text": "嗯？C会无缘无故专门给你送东西吗",
             "portrait": "B/盗窃犯",
             "position": "right"
         },
         {
-            "id": "line_15",
+            "id": "line_2_14",
             "type": "dialogue",
             "speaker": "D",
-            "text": "说明酒是你自己拿的，因为C没有兑现他的承诺于是你擅自闯入了C的房间。",
+            "text": "天底下没有免费的午餐，这不是赠送，而是交换，C与你交换的东西就是：",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_16",
+            "id": "cmd_RequireEvidence_1",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "羊皮纸",
+                "line_2_15",
+                "line_2_18"
+            ]
+        },
+        {
+            "id": "line_2_15",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "你床下的羊皮纸，一个酒鬼难道对邪教感兴趣？",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_2_16",
             "type": "dialogue",
             "speaker": "A",
             "text": "等..等等......",
@@ -141,7 +167,7 @@
             "position": "right"
         },
         {
-            "id": "line_17",
+            "id": "line_2_17",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "胜负已分，你的说辞站不住脚",
@@ -149,19 +175,24 @@
             "position": "center"
         },
         {
-            "id": "line_18",
+            "id": "cmd_AddSuspicion_0",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["A", "25"]
+            "parameters": [
+                "A",
+                "25"
+            ]
         },
         {
-            "id": "line_19",
+            "id": "cmd_Jump_0",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_2_32"
+            ]
         },
         {
-            "id": "branch_a_fail",
+            "id": "line_2_18",
             "type": "dialogue",
             "speaker": "D",
             "text": "这点....能证明",
@@ -169,7 +200,7 @@
             "position": "left"
         },
         {
-            "id": "line_20",
+            "id": "line_2_19",
             "type": "dialogue",
             "speaker": "A",
             "text": "果然当初就该把你往死里打！",
@@ -177,7 +208,7 @@
             "position": "right"
         },
         {
-            "id": "line_21",
+            "id": "line_2_20",
             "type": "dialogue",
             "speaker": "B",
             "text": "赶紧投票把，浪费时间",
@@ -185,19 +216,24 @@
             "position": "right"
         },
         {
-            "id": "line_22",
+            "id": "cmd_AddSuspicion_1",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_23",
+            "id": "cmd_Jump_1",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_2_32"
+            ]
         },
         {
-            "id": "branch_b_start",
+            "id": "line_2_21",
             "type": "dialogue",
             "speaker": "D",
             "text": "你隐瞒了事实真相，这点就是",
@@ -205,17 +241,17 @@
             "position": "left"
         },
         {
-            "id": "line_24",
+            "id": "cmd_RequireEvidence_2",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
                 "黑皮书",
-                "branch_b_success_1",
-                "branch_b_fail_1"
+                "line_2_22",
+                "line_2_30"
             ]
         },
         {
-            "id": "branch_b_success_1",
+            "id": "line_2_22",
             "type": "dialogue",
             "speaker": "D",
             "text": "你说你一直在看书，那这本与众不同的书该怎么解释",
@@ -223,7 +259,7 @@
             "position": "left"
         },
         {
-            "id": "line_25",
+            "id": "line_2_23",
             "type": "dialogue",
             "speaker": "B",
             "text": "我有什么需要解释的？",
@@ -231,41 +267,49 @@
             "position": "right"
         },
         {
-            "id": "line_26",
+            "id": "line_2_24",
             "type": "dialogue",
             "speaker": "D",
-            "text": "你不是对宗教无感吗，怎么会看这种书？看位置恐怕是昨天才看，或是昨天某人才给你？",
+            "text": "你说对宗教无感，为什么还要看这种书？\n而且看位置恐怕是昨天才看，或是昨天某人才给你？",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_27",
+            "id": "line_2_25",
             "type": "dialogue",
             "speaker": "B",
-            "text": "呃！！！也有可能只是我没发现这本书，谁知道C什么时候留下来的",
+            "text": "呃！！！\n我根本没发现这本书，谁知道C什么时候留下来的",
             "portrait": "B/盗窃犯",
             "position": "right"
         },
         {
-            "id": "line_28",
+            "id": "line_2_26",
             "type": "dialogue",
             "speaker": "D",
-            "text": "不，唯独你不会犯这种错误",
+            "text": "不，以你的性格不会发这种错误",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_29",
+            "id": "line_2_27",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "能证明B强大控制欲望的是：",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "cmd_RequireEvidence_3",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "羊皮纸卷",
-                "branch_b_success_2",
-                "branch_b_fail_2"
+                "作息图表",
+                "line_2_28",
+                "line_2_30"
             ]
         },
         {
-            "id": "branch_b_success_2",
+            "id": "line_2_28",
             "type": "dialogue",
             "speaker": "D",
             "text": "你强大的控制欲不会允许这种错误\n你并非没理C反而达成了与A和C同样的锲约关系，这样一来，你也有了去C房间的理由",
@@ -273,7 +317,7 @@
             "position": "left"
         },
         {
-            "id": "line_30",
+            "id": "line_2_29",
             "type": "dialogue",
             "speaker": "B",
             "text": "呵呵，确实如你所说，但我去只是寒暄。为了避嫌我只好撒谎说没理C",
@@ -281,19 +325,24 @@
             "position": "right"
         },
         {
-            "id": "line_31",
+            "id": "cmd_AddSuspicion_2",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["B", "25"]
+            "parameters": [
+                "B",
+                "25"
+            ]
         },
         {
-            "id": "line_32_b_end",
+            "id": "cmd_Jump_2",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_2_32"
+            ]
         },
         {
-            "id": "branch_b_fail_2",
+            "id": "line_2_30",
             "type": "dialogue",
             "speaker": "D",
             "text": "对！就是这个",
@@ -301,7 +350,7 @@
             "position": "left"
         },
         {
-            "id": "line_33",
+            "id": "line_2_31",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "这根本说明不了任何问题，请你深思熟虑后再发言好吗",
@@ -309,47 +358,24 @@
             "position": "center"
         },
         {
-            "id": "line_34",
+            "id": "cmd_AddSuspicion_3",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_35",
+            "id": "cmd_Jump_3",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_2_32"
+            ]
         },
         {
-            "id": "branch_b_fail_1",
-            "type": "dialogue",
-            "speaker": "D",
-            "text": "对！就是这个",
-            "portrait": "Player/主角2",
-            "position": "left"
-        },
-        {
-            "id": "line_36",
-            "type": "dialogue",
-            "speaker": "典狱长",
-            "text": "这根本说明不了任何问题，请你深思熟虑后再发言好吗",
-            "portrait": "Warden/典狱长1",
-            "position": "center"
-        },
-        {
-            "id": "line_37",
-            "type": "command",
-            "command": "AddSuspicion",
-            "parameters": ["D", "25"]
-        },
-        {
-            "id": "line_38",
-            "type": "command",
-            "command": "Jump",
-            "parameters": ["trial_end"]
-        },
-        {
-            "id": "trial_end",
+            "id": "line_2_32",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "记录完成，下一轮。",
@@ -357,7 +383,7 @@
             "position": "center"
         },
         {
-            "id": "line_40_load",
+            "id": "cmd_LoadScene_0",
             "type": "command",
             "command": "LoadScene"
         }

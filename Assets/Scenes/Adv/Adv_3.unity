@@ -398,7 +398,7 @@ MonoBehaviour:
   describeText: "\u6BCF\u5929\u4F5C\u606F\u7684\u65F6\u95F4\u6BB5\u6807\u6CE8\u4E86\u51FA\u6765\uFF0C\u5E76\u9644\u4E0A\u4E86\u6BCF\u4EBA\u7262\u623F\u7684\u7ED3\u6784\u3002"
   describePortrait: {fileID: 21300000, guid: f48daf0646cf3e647a42d4afeaa192ce, type: 3}
   choiceDialogueLines: []
-  evidenceId: evidence_05
+  evidenceId: evidence_08
   evidenceTitle: "\u4F5C\u606F\u56FE\u8868"
   evidenceDescription: "\u83B7\u5F97\u7EBF\u7D22\u2014\u2014\u4F5C\u606F\u56FE\u7EB8"
   evidenceCloseUpImage: {fileID: 21300000, guid: f48daf0646cf3e647a42d4afeaa192ce, type: 3}
@@ -811,7 +811,7 @@ MonoBehaviour:
   describeText: "\u76D1\u72F1\u95E8\u9501\u7684\u8BBE\u8BA1\u7ED3\u6784\u56FE"
   describePortrait: {fileID: 21300000, guid: 8105e632d8356284a9f35b8144b96ece, type: 3}
   choiceDialogueLines: []
-  evidenceId: evidence_06
+  evidenceId: evidence_07
   evidenceTitle: "\u8BBE\u8BA1\u56FE\u7EB8"
   evidenceDescription: "\u83B7\u5F97\u7EBF\u7D22\u2014\u2014\u76D1\u72F1\u95E8\u9501\u7684\u8BBE\u8BA1\u7ED3\u6784\u56FE"
   evidenceCloseUpImage: {fileID: 21300000, guid: 8105e632d8356284a9f35b8144b96ece, type: 3}
@@ -2198,7 +2198,7 @@ MonoBehaviour:
   describeText: "\u5C01\u9762\u523B\u6709\u5341\u5B57\u67B6\u7684\u9ED1\u76AE\u4E66\uFF0C\u4F3C\u4E4E\u611F\u5230\u67D0\u79CD\u53EC\u5524\u7FFB\u5F00\u4E86\u6249\u9875"
   describePortrait: {fileID: 21300000, guid: 2f79786099354e046a3dd910282d8ae4, type: 3}
   choiceDialogueLines: []
-  evidenceId: evidence_07
+  evidenceId: evidence_09
   evidenceTitle: "\u9ED1\u76AE\u4E66"
   evidenceDescription: "\u83B7\u5F97\u7EBF\u7D22\u2014\u2014\u9ED1\u76AE\u4E66"
   evidenceCloseUpImage: {fileID: 21300000, guid: 2f79786099354e046a3dd910282d8ae4, type: 3}

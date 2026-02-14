@@ -2,7 +2,31 @@
     "chapterId": "Act01_Chapter02_Trial",
     "lines": [
         {
-            "id": "line_2",
+            "id": "line_1_0",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "你们回到中央审讯室。",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_1_1",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "经过上一轮的投票，谁都不愿意先开口。",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_1_2",
+            "type": "dialogue",
+            "speaker": "",
+            "text": "终于又是典狱长打破了寂静",
+            "portrait": "null",
+            "position": "center"
+        },
+        {
+            "id": "line_1_3",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "我们得尝试还原案发过程，还记得C的死因和验尸结果吗",
@@ -10,7 +34,7 @@
             "position": "center"
         },
         {
-            "id": "line_3",
+            "id": "line_1_4",
             "type": "dialogue",
             "speaker": "B",
             "text": "嗯...几乎所有条件都指向病发致死而非他杀。线索太有限了为什么不全部探索完再庭审？",
@@ -18,7 +42,7 @@
             "position": "right"
         },
         {
-            "id": "line_4",
+            "id": "line_1_5",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "规定就是规定。规定又不是我定的。",
@@ -26,7 +50,7 @@
             "position": "center"
         },
         {
-            "id": "line_5",
+            "id": "line_1_6",
             "type": "dialogue",
             "speaker": "B",
             "text": "好吧假设C有整理内务的习惯，那么一切都说的通了：C晚上躺在床上时感到了身体异样，此时他以无力呼救，于是决定安静的迎接死亡",
@@ -34,7 +58,7 @@
             "position": "right"
         },
         {
-            "id": "line_6",
+            "id": "line_1_7",
             "type": "dialogue",
             "speaker": "D",
             "text": "等等，如果是病发有一个疑点无法解释",
@@ -42,31 +66,17 @@
             "position": "left"
         },
         {
-            "id": "line_7",
+            "id": "cmd_RequireEvidence_0",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "抓痕",
-                "refute_1_success",
-                "refute_1_fail"
+                "低位抓痕",
+                "line_1_8",
+                "line_1_9"
             ]
         },
         {
-            "id": "refute_1_fail",
-            "type": "dialogue",
-            "speaker": "D",
-            "text": "总而言之就是这样，还有别的可能",
-            "portrait": "Player/主角1",
-            "position": "left"
-        },
-        {
-            "id": "line_8_jump",
-            "type": "command",
-            "command": "Jump",
-            "parameters": ["line_9"]
-        },
-        {
-            "id": "refute_1_success",
+            "id": "line_1_8",
             "type": "dialogue",
             "speaker": "D",
             "text": "假如是病发墙角的抓痕只可能是其他人留下的，那这个人是谁？",
@@ -74,7 +84,23 @@
             "position": "left"
         },
         {
-            "id": "line_9",
+            "id": "cmd_Jump_0",
+            "type": "command",
+            "command": "Jump",
+            "parameters": [
+                "line_1_13"
+            ]
+        },
+        {
+            "id": "line_1_9",
+            "type": "dialogue",
+            "speaker": "D",
+            "text": "总而言之就是这样，还有别的可能",
+            "portrait": "Player/主角1",
+            "position": "left"
+        },
+        {
+            "id": "line_1_10",
             "type": "dialogue",
             "speaker": "B",
             "text": "可以把他赶出去吗，或者说你就是凶手所以才要扰乱我们的思路？",
@@ -82,7 +108,7 @@
             "position": "right"
         },
         {
-            "id": "line_10",
+            "id": "line_1_11",
             "type": "dialogue",
             "speaker": "A",
             "text": "直接投票吧 我都看出来了",
@@ -90,7 +116,7 @@
             "position": "right"
         },
         {
-            "id": "line_11",
+            "id": "line_1_12",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "发言前还请三思",
@@ -98,7 +124,7 @@
             "position": "center"
         },
         {
-            "id": "line_12",
+            "id": "line_1_13",
             "type": "dialogue",
             "speaker": "B",
             "text": "所以问题是C死前到底接触了什么，房间里的抓痕又是谁留下的",
@@ -106,7 +132,7 @@
             "position": "right"
         },
         {
-            "id": "line_13",
+            "id": "line_1_14",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "或者换个思路上述说明C死亡期间有与他人接触。但是我在巡逻的时候没有看见别人，那就只能说明一点——C是在门禁前或是门禁后被杀害的",
@@ -114,7 +140,7 @@
             "position": "center"
         },
         {
-            "id": "line_14",
+            "id": "line_1_15",
             "type": "dialogue",
             "speaker": "D",
             "text": "嗯，确定下时间就好办了，大家晚上有出房间过吗",
@@ -122,7 +148,7 @@
             "position": "left"
         },
         {
-            "id": "line_15",
+            "id": "line_1_16",
             "type": "dialogue",
             "speaker": "D",
             "text": "我先说吧，我没出去过",
@@ -130,7 +156,7 @@
             "position": "left"
         },
         {
-            "id": "line_16",
+            "id": "line_1_17",
             "type": "dialogue",
             "speaker": "A",
             "text": "不知道，喝完剩下的酒我倒头就睡了",
@@ -138,7 +164,7 @@
             "position": "right"
         },
         {
-            "id": "line_17",
+            "id": "line_1_18",
             "type": "dialogue",
             "speaker": "B",
             "text": "门禁前去过一次厕所，很快就回来了",
@@ -146,7 +172,7 @@
             "position": "right"
         },
         {
-            "id": "line_18",
+            "id": "line_1_19",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "播报完后，我一直待在办公室里。门禁后才去的巡逻",
@@ -154,17 +180,17 @@
             "position": "center"
         },
         {
-            "id": "line_19",
+            "id": "cmd_ShowChoice_0",
             "type": "command",
             "command": "ShowChoice",
             "parameters": [
-                "A|branch_a_start",
-                "B|branch_b_start",
-                "典狱长|branch_w_start"
+                "A|line_1_20",
+                "B|line_1_26",
+                "典狱长|line_1_34"
             ]
         },
         {
-            "id": "branch_a_start",
+            "id": "line_1_20",
             "type": "dialogue",
             "speaker": "D",
             "text": "不，你说的跟在你房间里找到的线索有出入，那就是：",
@@ -172,17 +198,17 @@
             "position": "left"
         },
         {
-            "id": "line_20",
+            "id": "cmd_RequireEvidence_1",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "酒瓶",
-                "branch_a_success",
-                "branch_a_fail"
+                "没喝过的酒瓶",
+                "line_1_21",
+                "line_1_24"
             ]
         },
         {
-            "id": "branch_a_success",
+            "id": "line_1_21",
             "type": "dialogue",
             "speaker": "D",
             "text": "这瓶崭新的酒，你怎么解释",
@@ -190,7 +216,7 @@
             "position": "left"
         },
         {
-            "id": "line_21",
+            "id": "line_1_22",
             "type": "dialogue",
             "speaker": "A",
             "text": "这...这是 好吧这是我从C房间里抢的这本来是说好给我的但这孙子耍赖，我拿了酒就走了",
@@ -198,7 +224,7 @@
             "position": "right"
         },
         {
-            "id": "line_22",
+            "id": "line_1_23",
             "type": "dialogue",
             "speaker": "B",
             "text": "刚刚还是另一套说法的谁又能保证你这次说的又是真的",
@@ -206,19 +232,24 @@
             "position": "right"
         },
         {
-            "id": "line_23",
+            "id": "cmd_AddSuspicion_0",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["A", "25"]
+            "parameters": [
+                "A",
+                "25"
+            ]
         },
         {
-            "id": "line_24",
+            "id": "cmd_Jump_1",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "branch_a_fail",
+            "id": "line_1_24",
             "type": "dialogue",
             "speaker": "D",
             "text": "这点，你怎么解释",
@@ -226,7 +257,7 @@
             "position": "left"
         },
         {
-            "id": "line_25",
+            "id": "line_1_25",
             "type": "dialogue",
             "speaker": "A",
             "text": "所以这前后有什么关联？你想再被我揍一顿吗？",
@@ -234,19 +265,24 @@
             "position": "right"
         },
         {
-            "id": "line_26",
+            "id": "cmd_AddSuspicion_1",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_27",
+            "id": "cmd_Jump_2",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "branch_b_start",
+            "id": "line_1_26",
             "type": "dialogue",
             "speaker": "D",
             "text": "你说的与某个人的说辞存在矛盾",
@@ -254,7 +290,17 @@
             "position": "left"
         },
         {
-            "id": "line_28",
+            "id": "cmd_RequireEvidence_2",
+            "type": "command",
+            "command": "RequireEvidence",
+            "parameters": [
+                "关于A看见的”C“",
+                "line_1_27",
+                "line_1_32"
+            ]
+        },
+        {
+            "id": "line_1_27",
             "type": "dialogue",
             "speaker": "D",
             "text": "你是说你在外面的期间既没有看见A也没看见A口中的“C”吗？这恐怕不对吧",
@@ -262,7 +308,7 @@
             "position": "left"
         },
         {
-            "id": "line_29",
+            "id": "line_1_28",
             "type": "dialogue",
             "speaker": "B",
             "text": "有没有可能是A在撒谎呢，他那个点根本不在外面",
@@ -270,7 +316,7 @@
             "position": "right"
         },
         {
-            "id": "line_30",
+            "id": "line_1_29",
             "type": "dialogue",
             "speaker": "A",
             "text": "老子可不屑干这种事！",
@@ -278,7 +324,7 @@
             "position": "right"
         },
         {
-            "id": "line_31",
+            "id": "line_1_30",
             "type": "dialogue",
             "speaker": "D",
             "text": "不他不可能撒谎，因为",
@@ -286,17 +332,17 @@
             "position": "left"
         },
         {
-            "id": "line_32",
+            "id": "cmd_RequireEvidence_3",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
                 "带血的绷带",
-                "branch_b_success",
-                "branch_b_fail"
+                "line_1_31",
+                "line_1_32"
             ]
         },
         {
-            "id": "branch_b_success",
+            "id": "line_1_31",
             "type": "dialogue",
             "speaker": "D",
             "text": "因为他门禁前跟我打了一场才回去，所以只可能是\n你在说谎",
@@ -304,19 +350,24 @@
             "position": "left"
         },
         {
-            "id": "line_33",
+            "id": "cmd_AddSuspicion_2",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["B", "25"]
+            "parameters": [
+                "B",
+                "25"
+            ]
         },
         {
-            "id": "line_34",
+            "id": "cmd_Jump_3",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "branch_b_fail",
+            "id": "line_1_32",
             "type": "dialogue",
             "speaker": "D",
             "text": "呃呃呃，总之就是这个原因",
@@ -324,7 +375,7 @@
             "position": "left"
         },
         {
-            "id": "line_35_fail",
+            "id": "line_1_33",
             "type": "dialogue",
             "speaker": "B",
             "text": "这么着急将矛头指向别人，是向掩饰真相吗？",
@@ -332,19 +383,24 @@
             "position": "right"
         },
         {
-            "id": "line_36",
+            "id": "cmd_AddSuspicion_3",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_37",
+            "id": "cmd_Jump_4",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "branch_w_start",
+            "id": "line_1_34",
             "type": "dialogue",
             "speaker": "D",
             "text": "典狱长，你巡逻的时候确保所有罪犯都在房间里吗",
@@ -352,7 +408,7 @@
             "position": "left"
         },
         {
-            "id": "line_38",
+            "id": "line_1_35",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "是的，全部确认后我才离开",
@@ -360,7 +416,7 @@
             "position": "center"
         },
         {
-            "id": "line_39",
+            "id": "line_1_36",
             "type": "dialogue",
             "speaker": "D",
             "text": "嗯，但是你没确认躺在房间里的就是本人",
@@ -368,7 +424,7 @@
             "position": "left"
         },
         {
-            "id": "line_40",
+            "id": "line_1_37",
             "type": "dialogue",
             "speaker": "D",
             "text": "能证明这一点的就是：",
@@ -376,53 +432,66 @@
             "position": "left"
         },
         {
-            "id": "line_41",
+            "id": "cmd_RequireEvidence_4",
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "床",
-                "branch_w_success",
-                "branch_w_fail"
+                "C的死亡姿势",
+                "line_1_38",
+                "line_1_42"
             ]
         },
         {
-            "id": "branch_w_success",
+            "id": "line_1_38",
             "type": "dialogue",
             "speaker": "D",
-            "text": "你不可能没发现C奇怪的死状，这说明C只可能在门禁前死的不然没法解释夜里C一点动静都没有就被他杀了。\n凶手先杀了C，自己在伪人化进入C的房间装作C正常躺在床上。\n最后等巡逻结束后再用了某种方式将C运回了房间，摆出奇怪的姿势。\n或者说你在有意隐瞒什么，我可以这么理解吗",
+            "text": "你不可能没发现C奇怪的死状，这说明C只可能在门禁前死的不然没法解释夜里C一点动静都没有就被他杀了。",
             "portrait": "Player/主角1",
             "position": "left"
         },
         {
-            "id": "line_42",
+            "id": "line_1_39",
             "type": "dialogue",
             "speaker": "典狱长",
-            "text": "这样确实可以推出C的具体死亡时间。不过至于你的猜想，无稽之谈",
+            "text": "所以呢，我必须每天都勤勤恳恳的工作？别逗我笑了",
             "portrait": "Warden/典狱长2",
             "position": "center"
         },
         {
-            "id": "line_43",
+            "id": "line_1_40",
             "type": "dialogue",
             "speaker": "B",
-            "text": "但你可得为你说过的话负责哦长官",
+            "text": "但我们也可以理解成您故意隐瞒了事实不是吗？",
             "portrait": "B/盗窃犯2",
             "position": "right"
         },
         {
-            "id": "line_44",
+            "id": "line_1_41",
+            "type": "dialogue",
+            "speaker": "典狱长",
+            "text": "啧！",
+            "portrait": "Warden/典狱长1",
+            "position": "center"
+        },
+        {
+            "id": "cmd_AddSuspicion_4",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["典狱长", "25"]
+            "parameters": [
+                "典狱长",
+                "25"
+            ]
         },
         {
-            "id": "line_45",
+            "id": "cmd_Jump_5",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "branch_w_fail",
+            "id": "line_1_42",
             "type": "dialogue",
             "speaker": "D",
             "text": "没错，就是这一点可以证明",
@@ -430,7 +499,7 @@
             "position": "left"
         },
         {
-            "id": "line_46",
+            "id": "line_1_43",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "你有权保持沉默，但是你所说的每句话将成为呈堂证供",
@@ -438,19 +507,24 @@
             "position": "center"
         },
         {
-            "id": "line_47",
+            "id": "cmd_AddSuspicion_5",
             "type": "command",
             "command": "AddSuspicion",
-            "parameters": ["D", "25"]
+            "parameters": [
+                "D",
+                "25"
+            ]
         },
         {
-            "id": "line_48",
+            "id": "cmd_Jump_6",
             "type": "command",
             "command": "Jump",
-            "parameters": ["trial_end"]
+            "parameters": [
+                "line_1_44"
+            ]
         },
         {
-            "id": "trial_end",
+            "id": "line_1_44",
             "type": "dialogue",
             "speaker": "",
             "text": "进入投票阶段，会场再次陷入死一样的寂静",
@@ -458,7 +532,7 @@
             "position": "center"
         },
         {
-            "id": "line_50",
+            "id": "line_1_45",
             "type": "dialogue",
             "speaker": "典狱长",
             "text": "记录完成，下一轮。",
@@ -466,7 +540,7 @@
             "position": "center"
         },
         {
-            "id": "line_51",
+            "id": "cmd_LoadScene_0",
             "type": "command",
             "command": "LoadScene"
         }

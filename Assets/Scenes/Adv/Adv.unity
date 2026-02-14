@@ -178,7 +178,7 @@ MonoBehaviour:
   describePortrait: {fileID: 21300000, guid: 4e0c0a9011a31c04baba11f5aac2bd4d, type: 3}
   choiceDialogueLines: []
   evidenceId: evidence_02
-  evidenceTitle: "\u6293\u75D5"
+  evidenceTitle: "\u4F4E\u4F4D\u6293\u75D5"
   evidenceDescription: "\u83B7\u5F97\u7EBF\u7D22\u2014\u2014\u4F4E\u4F4D\u6293\u75D5"
   evidenceCloseUpImage: {fileID: 21300000, guid: 4e0c0a9011a31c04baba11f5aac2bd4d, type: 3}
   preEvidenceDialogueLines:
@@ -1983,7 +1983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4482172428526054201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2149,10 +2149,10 @@ MonoBehaviour:
     speakerName: "\u5178\u72F1\u957F"
     background: {fileID: 21300000, guid: 75604ac423e6ac240a372ce0d3a8cce0, type: 3}
     triggerFadeEffect: 0
-    giveEvidence: 0
-    evidenceId: 
-    evidenceTitle: 
-    evidenceDesc: 
+    giveEvidence: 1
+    evidenceId: evidence_11
+    evidenceTitle: "\u4F2A\u4EBA\u65E0\u6CD5\u6291\u5236\u6740\u4EBA\u51B2\u52A8"
+    evidenceDesc: "\u201C\u4F2A\u4EBA\u65E0\u6CD5\u6291\u5236\u6740\u4EBA\u7684\u51B2\u52A8\uFF0C\u4ED6\u4EEC\u5F00\u59CB\u4E86\u201D"
     evidenceIcon: {fileID: 0}
   - text: "\u4F60\u6446\u6446\u624B\uFF0C\u5934\u75BC\u7684\u5389\u5BB3\uFF0C\u8138\u4E0A\u4E5F\u706B\u8FA3\u8FA3\u7684\u3002\u6D51\u7136\u4E0D\u8BB0\u5F97\u6628\u665A\u53D1\u751F\u4E86\u4EC0\u4E48\u3002"
     portrait: {fileID: 21300000, guid: 3b69315578df4cd42b4b8649664f55a6, type: 3}
@@ -2342,10 +2342,10 @@ MonoBehaviour:
     speakerName: "\u5178\u72F1\u957F"
     background: {fileID: 21300000, guid: f0a658843a0fab94e89b41494848cb14, type: 3}
     triggerFadeEffect: 0
-    giveEvidence: 0
-    evidenceId: 
-    evidenceTitle: 
-    evidenceDesc: 
+    giveEvidence: 1
+    evidenceId: envidence_12
+    evidenceTitle: "\u4F2A\u4EBA\u80FD\u6539\u53D8\u8EAB\u4F53\u6784\u9020"
+    evidenceDesc: "\u4F2A\u4EBA\u53EF\u4EE5\u6539\u53D8\u8EAB\u4F53\u6784\u9020"
     evidenceIcon: {fileID: 0}
   - text: "\u201C\u5728\u627E\u51FA\u4F2A\u4EBA\u4E4B\u524D\uFF0C\u6BCF\u4E00\u8F6E\u5EAD\u5BA1\uFF0C\u6211\u4EEC\u53EA\u4F1A\u8BB0\u5F55\u8C01\u6700\u53EF\u7591\u3002\u7B49\u4E00\u5207\u7ED3\u675F\u2014\u2014\u5ACC\u7591\u6700\u9AD8\u7684\u4EBA\uFF0C\u5C06\u88AB\u5904\u51B3\u3002\u201D "
     portrait: {fileID: 21300000, guid: 53c4d4325a23df144a617d14147d7b3e, type: 3}

@@ -77,20 +77,23 @@ public class BackpackManager : MonoBehaviour
     /// <summary>添加证物（关键线索），通常来自找寻阶段</summary>
     public bool AddEvidence(string id, string title, string description, Sprite image = null)
     {
-        return AddItem(new BackpackItem(id, InfoCategory.Suspicion, title, description, image));
+        // 强制使用 title 作为 ID，确保 ID 与显示名称一致
+        return AddItem(new BackpackItem(title, InfoCategory.Suspicion, title, description, image));
     }
 
     /// <summary>添加证词或重要文本，可关联到人物</summary>
     public bool AddTestimony(string id, string title, string description, string characterId = null, Sprite image = null)
     {
         var cat = string.IsNullOrEmpty(characterId) ? InfoCategory.Suspicion : InfoCategory.Character;
-        return AddItem(new BackpackItem(id, cat, title, description, image, characterId));
+        // 强制使用 title 作为 ID
+        return AddItem(new BackpackItem(title, cat, title, description, image, characterId));
     }
 
     /// <summary>添加结论（意识流后获得）</summary>
     public bool AddConclusion(string id, string title, string description, Sprite image = null)
     {
-        return AddItem(new BackpackItem(id, InfoCategory.Conclusion, title, description, image));
+        // 强制使用 title 作为 ID
+        return AddItem(new BackpackItem(title, InfoCategory.Conclusion, title, description, image));
     }
 
     /// <summary>解锁某类标签（疑点首次获得时解锁，结论在意识流后解锁）</summary>
