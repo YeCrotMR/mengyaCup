@@ -202,7 +202,7 @@
             "type": "command",
             "command": "RequireEvidence",
             "parameters": [
-                "没喝过的酒瓶",
+                "没喝过的酒",
                 "line_1_21",
                 "line_1_24"
             ]
