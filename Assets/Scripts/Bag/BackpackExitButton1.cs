@@ -10,6 +10,8 @@ public class BackpackExitButton : MonoBehaviour
     [Header("要禁用的物体")]
     [Tooltip("点击按钮后将被 SetActive(false) 的物体")]
     public GameObject targetToDisable;
+    [Tooltip("可选：需要同时关闭的另一个物体，不填则只关闭上面那个")]
+    public GameObject ExitToDisable;
 
     private void Awake()
     {
@@ -18,16 +20,7 @@ public class BackpackExitButton : MonoBehaviour
 
     private void OnExitClick()
     {
-        // 优先调用 BackpackUI 的标准关闭流程（因为那里包含清理逻辑和遮罩关闭）
-        if (BackpackUI.Instance != null)
-        {
-            BackpackUI.Instance.CloseBackpack();
-        }
-        else
-        {
-            // 如果没有单例，则回退到简单的禁用逻辑
-            DisableTarget();
-        }
+        DisableTarget();
     }
 
     /// <summary>
@@ -42,5 +35,7 @@ public class BackpackExitButton : MonoBehaviour
         }
 
         targetToDisable.SetActive(false);
+        if (ExitToDisable != null)
+            ExitToDisable.SetActive(false);
     }
 }
