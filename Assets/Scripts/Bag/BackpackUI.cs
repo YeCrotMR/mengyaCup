@@ -79,9 +79,20 @@ public class BackpackUI : MonoBehaviour
 
         backpackPanel.SetActive(true);
         Black.SetActive(true);
+        currentTab = InfoCategory.Character; // 默认显示「人物」标签
         RefreshDisplay();
         
-        if (detailPanel != null) detailPanel.SetActive(false);
+        // 默认选中并显示第一个人物（囚犯A）
+        if (BackpackManager.Instance != null)
+        {
+            var chars = BackpackManager.Instance.GetItemsByCategory(InfoCategory.Character);
+            if (chars.Count > 0)
+                ShowDetail(chars[0]);
+            else if (detailPanel != null)
+                detailPanel.SetActive(false);
+        }
+        else if (detailPanel != null)
+            detailPanel.SetActive(false);
     }
     
     /// <summary>
@@ -98,11 +109,22 @@ public class BackpackUI : MonoBehaviour
 
         backpackPanel.SetActive(true);
         Black.SetActive(true);
+        currentTab = InfoCategory.Character; // 默认显示「人物」标签
         RefreshDisplay();
         
-        // 初始时不显示详情，也不显示出示按钮（因为还没选中）
-        if (detailPanel != null) detailPanel.SetActive(false);
-        if (presentButton != null) presentButton.gameObject.SetActive(false);
+        // 默认选中并显示第一个人物（囚犯A），出示模式下不自动显示出示按钮直到用户点列表
+        if (BackpackManager.Instance != null)
+        {
+            var chars = BackpackManager.Instance.GetItemsByCategory(InfoCategory.Character);
+            if (chars.Count > 0)
+                ShowDetail(chars[0]);
+            else if (detailPanel != null)
+                detailPanel.SetActive(false);
+        }
+        else if (detailPanel != null)
+            detailPanel.SetActive(false);
+        if (presentButton != null)
+            presentButton.gameObject.SetActive(isSelectionMode && currentSelectedItem != null);
     }
 
     /// <summary>关闭背包</summary>
