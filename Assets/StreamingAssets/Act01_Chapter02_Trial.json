@@ -79,7 +79,7 @@
             "id": "line_1_8",
             "type": "dialogue",
             "speaker": "D",
-            "text": "假如是病发墙角的抓痕只可能是其他人留下的，那这个人是谁？",
+            "text": "假如是病发，那么墙角的抓痕只可能是其他人留下的。",
             "portrait": "Player/主角1",
             "position": "left"
         },
